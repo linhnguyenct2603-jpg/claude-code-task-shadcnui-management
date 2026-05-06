@@ -1,0 +1,42 @@
+[
+  {
+    "id": "CUST-001",
+    "name": "Nguyễn Văn A",
+    "email": "nguyenvana@example.com",
+    "phone": "0901234567",
+    "message": "Tôi quan tâm đến dịch vụ tư vấn đầu tư",
+    "createdAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "id": "CUST-002",
+    "name": "Trần Thị B",
+    "email": "tranthib@example.com",
+    "phone": "0912345678",
+    "message": "Cần tư vấn về sản phẩm tài chính",
+    "createdAt": "2024-01-20T14:45:00.000Z"
+  },
+  {
+    "id": "CUST-003",
+    "name": "Lê Văn C",
+    "email": "levanc@example.com",
+    "phone": "0923456789",
+    "message": "Muốn biết thêm về gói dịch vụ premium",
+    "createdAt": "2024-01-25T09:15:00.000Z"
+  },
+  {
+    "id": "CUST-004",
+    "name": "Phạm Thị D",
+    "email": "phamthid@example.com",
+    "phone": "0934567890",
+    "message": "Hỏi về chính sách bảo mật thông tin",
+    "createdAt": "2024-02-01T16:20:00.000Z"
+  },
+  {
+    "id": "CUST-005",
+    "name": "Hoàng Văn E",
+    "email": "hoangvane@example.com",
+    "phone": "0945678901",
+    "message": "Quan tâm đến dịch vụ tư vấn thuế",
+    "createdAt": "2024-02-05T11:00:00.000Z"
+  }
+]
