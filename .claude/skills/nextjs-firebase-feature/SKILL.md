@@ -84,7 +84,7 @@ export async function getFirestoreCollection<T>(
 - **Mock data fallback**: luôn truyền mock data làm fallback — không cần `serverTimestamp()` trong service
 - **No real-time**: KHÔNG dùng `onSnapshot`
 - **No direct Firestore CRUD**: service chỉ dùng `getFirestoreCollection` — tạo/cập nhật/xóa thực hiện trên local state (callback pattern)
--**lưu dữ liệu vào firestore/ ffirstore** khi hoàn thành tính năng.
+-**lưu dữ liệu vào firestore/ firstore** khi hoàn thành tính năng.
 ## Service Layer
 
 ```typescript

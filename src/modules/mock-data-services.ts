@@ -10,6 +10,7 @@ import { seedDashboard3MockData } from "@/modules/dashboard-3/services/mock-data
 import { seedFaqsMockData } from "@/modules/faqs/services/mock-data-services"
 import { seedMailMockData } from "@/modules/mail/services/mock-data-services"
 import { seedPricingMockData } from "@/modules/pricing/services/mock-data-services"
+import { seedProjectsMockData } from "@/modules/projects/services/mock-data-services"
 import { seedSettingsMockData } from "@/modules/settings/services/mock-data-services"
 import { seedTasksMockData } from "@/modules/tasks/services/mock-data-services"
 import { seedUsersMockData } from "@/modules/users/services/mock-data-services"
@@ -27,6 +28,7 @@ export const mockDataFeatures = [
   { id: "faqs", label: "FAQs", seed: seedFaqsMockData },
   { id: "pricing", label: "Pricing", seed: seedPricingMockData },
   { id: "settings", label: "Settings", seed: seedSettingsMockData },
+  { id: "projects", label: "Projects", seed: seedProjectsMockData },
 ]
 
 export async function seedFeatureMockData(

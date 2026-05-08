@@ -1,0 +1,37 @@
+[
+  {
+    "id": "PROJ-1001",
+    "title": "Xây dựng hệ thống quản lý nhân sự",
+    "priority": "high",
+    "startDate": "2026-01-15",
+    "dueDate": "2026-06-30"
+  },
+  {
+    "id": "PROJ-1002",
+    "title": "Phát triển ứng dụng thương mại điện tử",
+    "priority": "critical",
+    "startDate": "2026-02-01",
+    "dueDate": "2026-08-15"
+  },
+  {
+    "id": "PROJ-1003",
+    "title": "Triển khai hạ tầng cloud infrastructure",
+    "priority": "medium",
+    "startDate": "2026-03-10",
+    "dueDate": "2026-05-20"
+  },
+  {
+    "id": "PROJ-1004",
+    "title": "Thiết kế giao diện người dùng dashboard",
+    "priority": "low",
+    "startDate": "2026-04-01",
+    "dueDate": "2026-04-30"
+  },
+  {
+    "id": "PROJ-1005",
+    "title": "Tích hợp hệ thống thanh toán trực tuyến",
+    "priority": "high",
+    "startDate": "2026-05-01",
+    "dueDate": "2026-07-15"
+  }
+]

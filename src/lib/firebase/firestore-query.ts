@@ -126,21 +126,19 @@ async function writeFirestoreDocumentRest<T extends Record<string, unknown>>(
       )}`
     : `${baseUrl}/${encodeURIComponent(documentId || "")}?key=${encodeURIComponent(FIRESTORE_API_KEY)}`
 
-  const init: RequestInit = {
+  const payload = buildFirestoreFields(data)
+  const response = await fetch(url, {
     method,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(buildFirestoreFields(data)),
-  }
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  })
+  const responseText = await response.text()
 
-  const response = await fetch(url, init)
   if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`Firestore REST write failed: ${response.status} ${errorText}`)
+    throw new Error(`Firestore REST write failed: ${response.status} ${responseText}`)
   }
 
-  const result = await response.json()
+  const result = JSON.parse(responseText)
   return documentId ?? result.name?.split("/").pop()
 }
 
@@ -221,10 +219,15 @@ export async function addFirestoreDocument<T extends Record<string, unknown>>(
     }
     const docRef = await promiseWithTimeout(addDoc(collection(db, collectionName), data), 10000)
     return docRef.id
-  } catch (error) {
-    console.warn(`Firestore SDK write failed for ${collectionName}. Trying REST fallback.`, error)
-    const id = await writeFirestoreDocumentRest(collectionName, data, documentId)
-    return id
+  } catch (sdkError: any) {
+    console.warn(`[Firestore] SDK write failed for ${collectionName}. Trying REST fallback.`, sdkError?.message || sdkError)
+    try {
+      const id = await writeFirestoreDocumentRest(collectionName, data, documentId)
+      return id
+    } catch (restError: any) {
+      console.error(`[Firestore] Both SDK and REST write failed for ${collectionName}:`, sdkError, restError)
+      throw new Error(`Failed to save document to ${collectionName}. Error: ${restError?.message || "Unknown error"}`)
+    }
   }
 }
 
@@ -236,9 +239,15 @@ export async function updateFirestoreDocument(
   try {
     const db = await getDb()
     await promiseWithTimeout(updateDoc(doc(db, collectionName, documentId), data), 10000)
-  } catch (error) {
-    console.warn(`Firestore SDK update failed for ${collectionName}/${documentId}. Trying REST fallback.`, error)
-    await writeFirestoreDocumentRest(collectionName, data, documentId, "PATCH")
+  } catch (sdkError: any) {
+    console.warn(`[Firestore] SDK update failed for ${collectionName}/${documentId}. Trying REST fallback.`, sdkError?.message || sdkError)
+    try {
+      await writeFirestoreDocumentRest(collectionName, data, documentId, "PATCH")
+      console.log(`[Firestore] REST update succeeded for ${documentId}`)
+    } catch (restError: any) {
+      console.error(`[Firestore] REST update also failed for ${collectionName}/${documentId}:`, restError?.message || restError)
+      throw new Error(`Failed to update document in ${collectionName}. Error: ${restError?.message || "Unknown error"}`)
+    }
   }
 }
 
@@ -249,20 +258,25 @@ export async function deleteFirestoreDocument(
   try {
     const db = await getDb()
     await promiseWithTimeout(deleteDoc(doc(db, collectionName, documentId)), 10000)
-  } catch (error) {
-    console.warn(`Firestore SDK delete failed for ${collectionName}/${documentId}. Trying REST fallback.`, error)
+  } catch (sdkError: any) {
+    console.warn(`[Firestore] SDK delete failed for ${collectionName}/${documentId}. Trying REST fallback.`, sdkError?.message || sdkError)
     if (!FIRESTORE_API_KEY || !FIRESTORE_PROJECT_ID) {
-      throw error
+      throw sdkError
     }
     const url = `https://firestore.googleapis.com/v1/projects/${encodeURIComponent(
       FIRESTORE_PROJECT_ID
     )}/databases/(default)/documents/${encodeURIComponent(collectionName)}/${encodeURIComponent(
       documentId
     )}?key=${encodeURIComponent(FIRESTORE_API_KEY)}`
-    const response = await fetch(url, { method: "DELETE" })
-    if (!response.ok) {
-      const errorText = await response.text()
-      throw new Error(`Firestore REST delete failed: ${response.status} ${errorText}`)
+    try {
+      const response = await fetch(url, { method: "DELETE" })
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`Firestore REST delete failed: ${response.status} ${errorText}`)
+      }
+    } catch (restError: any) {
+      console.error(`[Firestore] REST delete also failed for ${collectionName}/${documentId}:`, restError?.message || restError)
+      throw new Error(`Failed to delete document from ${collectionName}. Error: ${restError?.message || "Unknown error"}`)
     }
   }
 }

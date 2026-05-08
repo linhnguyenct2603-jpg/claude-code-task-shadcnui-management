@@ -19,6 +19,7 @@ import {
   Users,
   Headphones,
   UserPlus,
+  Briefcase,
 } from "lucide-react"
 import { signOut } from "firebase/auth"
 import Link from "next/link"
@@ -73,6 +74,11 @@ const data = {
           title: "Mail",
           url: "/mail",
           icon: Mail,
+        },
+        {
+          title: "Projects",
+          url: "/projects",
+          icon: Briefcase,
         },
         {
           title: "Tasks",
