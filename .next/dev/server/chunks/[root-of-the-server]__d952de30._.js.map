@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///D:/Ph%C6%B0%C6%A1ng%20Linh%20Desktop/claude-code-shadcn-dashboard-task-management/src/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\nimport type { NextRequest } from 'next/server'\n\nexport function proxy(request: NextRequest) {\n  if (request.nextUrl.pathname === '/login') {\n    return NextResponse.redirect(new URL('/sign-in', request.url))\n  }\n\n  if (request.nextUrl.pathname === '/register') {\n    return NextResponse.redirect(new URL('/sign-up', request.url))\n  }\n\n  return NextResponse.next()\n}\n\nexport const config = {\n  matcher: [\n    '/((?!api|_next/static|_next/image|favicon.ico).*)',\n  ],\n}\n"],"names":[],"mappings":";;;;;;AAAA;;AAGO,SAAS,MAAM,OAAoB;IACxC,IAAI,QAAQ,OAAO,CAAC,QAAQ,KAAK,UAAU;QACzC,OAAO,8IAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,YAAY,QAAQ,GAAG;IAC9D;IAEA,IAAI,QAAQ,OAAO,CAAC,QAAQ,KAAK,aAAa;QAC5C,OAAO,8IAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,YAAY,QAAQ,GAAG;IAC9D;IAEA,OAAO,8IAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QACP;KACD;AACH"}}]
+}

@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[15730,["/_next/static/chunks/d0f087657865a392.js","/_next/static/chunks/38c76eadfbb3f60e.js","/_next/static/chunks/b49b9f19f7f0a519.js","/_next/static/chunks/e0a6170d69cef1e2.js","/_next/static/chunks/ca3eee6af77aa586.js","/_next/static/chunks/19041dbf75f17cf9.js","/_next/static/chunks/1e9f768250e0891c.js","/_next/static/chunks/40e44b1102c54eb5.js","/_next/static/chunks/3f7ac9c93442085c.js","/_next/static/chunks/8b90a1f3e3ffc80f.js","/_next/static/chunks/88037a2cfe7efff8.js","/_next/static/chunks/335e8d843f13124f.js","/_next/static/chunks/d583c59271e866f5.js","/_next/static/chunks/c046bec4c4c3675f.js"],"MarketingDashboard"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/8813a3f24f083cf0.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"khPU_E9d7wzhT7yj7tuKK","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/_next/static/chunks/335e8d843f13124f.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/d583c59271e866f5.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/c046bec4c4c3675f.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

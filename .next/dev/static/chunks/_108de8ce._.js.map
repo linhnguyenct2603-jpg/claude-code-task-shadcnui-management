@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Ph%C6%B0%C6%A1ng%20Linh%20Desktop/claude-code-shadcn-dashboard-task-management/src/app/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect } from \"react\";\nimport { useRouter } from \"next/navigation\";\n\nexport default function HomePage() {\n  const router = useRouter();\n\n  useEffect(() => {\n    router.replace(\"/dashboard\");\n  }, [router]);\n\n  // Show a loading state while redirecting\n  return (\n    <div className=\"flex min-h-screen items-center justify-center\">\n      <div className=\"text-center\">\n        <div className=\"animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto\"></div>\n        <p className=\"text-muted-foreground mt-2\">Redirecting to dashboard...</p>\n      </div>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAEA;AACA;;;AAHA;;;AAKe,SAAS;;IACtB,MAAM,SAAS,IAAA,kJAAS;IAExB,IAAA,0KAAS;8BAAC;YACR,OAAO,OAAO,CAAC;QACjB;6BAAG;QAAC;KAAO;IAEX,yCAAyC;IACzC,qBACE,6LAAC;QAAI,WAAU;kBACb,cAAA,6LAAC;YAAI,WAAU;;8BACb,6LAAC;oBAAI,WAAU;;;;;;8BACf,6LAAC;oBAAE,WAAU;8BAA6B;;;;;;;;;;;;;;;;;AAIlD;GAhBwB;;QACP,kJAAS;;;KADF"}},
+    {"offset": {"line": 73, "column": 0}, "map": {"version":3,"sources":["file:///D:/Ph%C6%B0%C6%A1ng%20Linh%20Desktop/claude-code-shadcn-dashboard-task-management/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}}]
+}

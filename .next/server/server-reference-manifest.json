@@ -1,0 +1,21 @@
+{
+  "node": {
+    "4097db3985cdce71c297d054c56e991000858c0516": {
+      "workers": {
+        "app/(dashboard)/mock-data/page": {
+          "moduleId": 24411,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/(dashboard)/mock-data/page.tsx"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/mock-data/page": "rsc"
+      },
+      "filename": "src/app/(dashboard)/mock-data/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "gJzMsBb2vWvNrRSYiI2Cq6WyxjjxLs4cPnIzB1BE/Xw="
+}
