@@ -29,16 +29,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
@@ -79,23 +69,6 @@ export function DataTable({ users, onDeleteUser, onEditUser, onAddUser }: DataTa
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = useState({})
   const [globalFilter, setGlobalFilter] = useState("")
-
-  // Delete confirmation state
-  const [deleteOpen, setDeleteOpen] = useState(false)
-  const [userToDelete, setUserToDelete] = useState<User | null>(null)
-
-  const handleDeleteClick = (user: User) => {
-    setUserToDelete(user)
-    setDeleteOpen(true)
-  }
-
-  const handleDeleteConfirm = () => {
-    if (userToDelete) {
-      onDeleteUser(userToDelete.id)
-      setDeleteOpen(false)
-      setUserToDelete(null)
-    }
-  }
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -265,7 +238,7 @@ export function DataTable({ users, onDeleteUser, onEditUser, onAddUser }: DataTa
                 <DropdownMenuItem
                   variant="destructive"
                   className="cursor-pointer"
-                  onClick={() => handleDeleteClick(user)}
+                  onClick={() => onDeleteUser(user.id)}
                 >
                   <Trash2 className="mr-2 size-4" />
                   Delete User
@@ -536,35 +509,6 @@ export function DataTable({ users, onDeleteUser, onEditUser, onAddUser }: DataTa
           </div>
         </div>
       </div>
-
-      {/* Delete Confirmation Alert Dialog */}
-      <AlertDialog open={deleteOpen} onOpenChange={setDeleteOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Xác nhận xóa</AlertDialogTitle>
-            <AlertDialogDescription>
-              Bạn có chắc chắn muốn xóa người dùng <strong>{userToDelete?.name}</strong> không?
-              Hành động này không thể hoàn tác.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel asChild>
-              <Button variant="outline" className="cursor-pointer">
-                Hủy
-              </Button>
-            </AlertDialogCancel>
-            <AlertDialogAction asChild>
-              <Button
-                variant="destructive"
-                onClick={handleDeleteConfirm}
-                className="cursor-pointer"
-              >
-                Xóa
-              </Button>
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </div>
   )
 }

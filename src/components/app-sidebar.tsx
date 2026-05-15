@@ -17,15 +17,9 @@ import {
   CreditCard,
   LayoutTemplate,
   Users,
-  Headphones,
-  UserPlus,
-  Briefcase,
 } from "lucide-react"
-import { signOut } from "firebase/auth"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { Logo } from "@/components/logo"
-import { useAuth } from "@/hooks/use-auth"
 
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
@@ -38,7 +32,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { auth } from "@/lib/firebase/client"
 
 const data = {
   user: {
@@ -76,11 +69,6 @@ const data = {
           icon: Mail,
         },
         {
-          title: "Projects",
-          url: "/projects",
-          icon: Briefcase,
-        },
-        {
           title: "Tasks",
           url: "/tasks",
           icon: CheckSquare,
@@ -99,16 +87,6 @@ const data = {
           title: "Users",
           url: "/users",
           icon: Users,
-        },
-        {
-          title: "Chăm sóc KH",
-          url: "/customer-care",
-          icon: Headphones,
-        },
-        {
-          title: "Quản lý khách hàng",
-          url: "/customers",
-          icon: UserPlus,
         },
       ],
     },
@@ -219,21 +197,6 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { user } = useAuth()
-  const router = useRouter()
-
-  async function handleSignOut() {
-    await signOut(auth)
-    router.push("/sign-in")
-    router.refresh()
-  }
-
-  const sidebarUser = {
-    name: user?.displayName || user?.email?.split("@")[0] || "User",
-    email: user?.email || "",
-    avatar: user?.photoURL || "",
-  }
-
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -259,7 +222,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={sidebarUser} onSignOut={handleSignOut} />
+        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   )

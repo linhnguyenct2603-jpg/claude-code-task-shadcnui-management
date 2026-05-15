@@ -1,14 +1,10 @@
-import { addFirestoreDocument, getFirestoreCollection } from "@/lib/firebase/firestore-query"
+import { getFirestoreCollection } from "@/lib/firebase/firestore-query"
 
 import { userMockData } from "./user-mock-data"
 import type { User, UserFormValues } from "./types/user-types"
 
 export async function getUsers(): Promise<User[]> {
   return getFirestoreCollection<User>("users", userMockData)
-}
-
-export async function saveUser(user: User): Promise<string> {
-  return addFirestoreDocument("users", user as unknown as Record<string, unknown>)
 }
 
 export function generateUserAvatar(name: string) {

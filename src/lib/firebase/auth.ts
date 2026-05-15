@@ -2,18 +2,10 @@ import { FirebaseError } from "firebase/app"
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
   updateProfile,
 } from "firebase/auth"
 
 import { auth } from "@/lib/firebase/client"
-
-const googleProvider = new GoogleAuthProvider()
-
-export async function signInWithGoogle() {
-  return signInWithPopup(auth, googleProvider)
-}
 
 export async function signInWithEmailPassword(email: string, password: string) {
   return signInWithEmailAndPassword(auth, email, password)
@@ -48,12 +40,6 @@ export function getFirebaseAuthErrorMessage(error: unknown, mode: "signin" | "si
         return "Thao tác thất bại quá nhiều lần. Vui lòng thử lại sau."
       case "auth/network-request-failed":
         return "Không thể kết nối Firebase. Vui lòng kiểm tra mạng và thử lại."
-      case "auth/popup-closed-by-user":
-        return "Cửa sổ đăng nhập Google đã bị đóng."
-      case "auth/cancelled-popup-request":
-        return "Yêu cầu đăng nhập Google đã bị hủy."
-      case "auth/account-exists-with-different-credential":
-        return "Tài khoản này đã được đăng ký bằng email/password. Vui lòng đăng nhập bằng email/password."
       default:
         return mode === "signup"
           ? "Không thể đăng ký. Vui lòng thử lại."

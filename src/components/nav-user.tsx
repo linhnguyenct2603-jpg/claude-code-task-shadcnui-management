@@ -6,10 +6,10 @@ import {
   LogOut,
   BellDot,
   CircleUser,
-  User as UserIcon,
 } from "lucide-react"
 import Link from "next/link"
 
+import { Logo } from "@/components/logo"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,27 +25,17 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function NavUser({
   user,
-  onSignOut,
 }: {
   user: {
     name: string
     email: string
     avatar: string
   }
-  onSignOut?: () => void
 }) {
   const { isMobile } = useSidebar()
-
-  const initials = user.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2)
 
   return (
     <SidebarMenu>
@@ -56,20 +46,9 @@ export function NavUser({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer"
             >
-              {user.avatar ? (
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback>{initials}</AvatarFallback>
-                </Avatar>
-              ) : (
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-                  {user.name ? (
-                    <span className="text-xs font-medium">{initials}</span>
-                  ) : (
-                    <UserIcon size={18} />
-                  )}
-                </div>
-              )}
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+                < Logo size={28} />
+              </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="text-muted-foreground truncate text-xs">
@@ -87,20 +66,9 @@ export function NavUser({
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                {user.avatar ? (
-                  <Avatar className="h-8 w-8 rounded-lg">
-                    <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback>{initials}</AvatarFallback>
-                  </Avatar>
-                ) : (
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-                    {user.name ? (
-                      <span className="text-xs font-medium">{initials}</span>
-                    ) : (
-                      <UserIcon size={18} />
-                    )}
-                  </div>
-                )}
+                <div className="h-8 w-8 rounded-lg">
+                  < Logo size={28} />
+                </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user.name}</span>
                   <span className="text-muted-foreground truncate text-xs">
@@ -131,12 +99,11 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem
-              className="cursor-pointer"
-              onSelect={onSignOut}
-            >
-              <LogOut />
-              Log out
+            <DropdownMenuItem asChild className="cursor-pointer">
+              <Link href="/sign-in">
+                <LogOut />
+                Log out
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
