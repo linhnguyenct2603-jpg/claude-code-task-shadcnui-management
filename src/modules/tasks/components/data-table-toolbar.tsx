@@ -15,7 +15,7 @@ import {
 import { DataTableViewOptions } from "./data-table-view-options"
 import { AddTaskModal } from "./add-task-modal"
 
-import { categories, priorities, statuses } from "@/modules/tasks/services/task-mock-data"
+import { priorities, statuses, tags } from "@/modules/tasks/services/task-mock-data"
 import type { Task } from "@/modules/tasks/services/types/task-types"
 
 interface DataTableToolbarProps<TData> {
@@ -38,8 +38,8 @@ export function DataTableToolbar<TData>({
     }
   }
 
-  const handleCategoryChange = (value: string) => {
-    const column = table.getColumn("category")
+  const handleTagChange = (value: string) => {
+    const column = table.getColumn("tags")
     if (value === "all") {
       column?.setFilterValue(undefined)
     } else {
@@ -57,7 +57,7 @@ export function DataTableToolbar<TData>({
   }
 
   const statusFilter = table.getColumn("status")?.getFilterValue() as string | undefined
-  const categoryFilter = table.getColumn("category")?.getFilterValue() as string | undefined
+  const tagFilter = table.getColumn("tags")?.getFilterValue() as string | undefined
   const priorityFilter = table.getColumn("priority")?.getFilterValue() as string | undefined
 
   return (
@@ -92,23 +92,23 @@ export function DataTableToolbar<TData>({
             </SelectContent>
           </Select>
 
-          {/* Category Filter */}
+          {/* Tags Filter */}
           <Select
-            value={categoryFilter || "all"}
-            onValueChange={handleCategoryChange}
+            value={tagFilter || "all"}
+            onValueChange={handleTagChange}
           >
             <SelectTrigger className="w-full cursor-pointer">
-              <SelectValue placeholder="Category" />
+              <SelectValue placeholder="Tags" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all" className="cursor-pointer">All Categories</SelectItem>
-              {categories.map((category) => (
+              <SelectItem value="all" className="cursor-pointer">All Tags</SelectItem>
+              {tags.map((tag) => (
                 <SelectItem
-                  key={category.value}
-                  value={category.value}
+                  key={tag.value}
+                  value={tag.value}
                   className="cursor-pointer"
                 >
-                  {category.label}
+                  {tag.label}
                 </SelectItem>
               ))}
             </SelectContent>

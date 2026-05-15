@@ -13,73 +13,53 @@ import tasksData from "./data/tasks.json"
 
 import { taskSchema } from "./types/task-types"
 
-export const categories = [
+export const priorities = [
   {
-    value: "bug",
-    label: "Bug",
+    label: "Thấp",
+    value: "low",
+    icon: ChevronDown,
   },
   {
-    value: "feature",
-    label: "Feature",
+    label: "Trung bình",
+    value: "medium",
+    icon: Minus,
   },
   {
-    value: "documentation",
-    label: "Docs",
-  },
-  {
-    value: "improvement",
-    label: "Improvement",
-  },
-  {
-    value: "refactor",
-    label: "Refactor",
+    label: "Cao",
+    value: "high",
+    icon: ChevronUp,
   },
 ]
 
 export const statuses = [
   {
-    value: "pending",
-    label: "Pending",
+    value: "todo",
+    label: "To Do",
     icon: Clock,
   },
   {
-    value: "todo",
-    label: "Todo",
-    icon: Circle,
-  },
-  {
-    value: "in progress",
+    value: "in_progress",
     label: "In Progress",
     icon: PlayCircle,
   },
   {
-    value: "completed",
-    label: "Completed",
+    value: "done",
+    label: "Done",
     icon: CheckCircle2,
   },
 ]
 
-export const priorities = [
-  {
-    label: "Minor",
-    value: "minor",
-    icon: ChevronDown,
-  },
-  {
-    label: "Normal",
-    value: "normal",
-    icon: Minus,
-  },
-  {
-    label: "Important",
-    value: "important",
-    icon: ChevronUp,
-  },
-  {
-    label: "Critical",
-    value: "critical",
-    icon: ChevronsUp,
-  },
+export const tags = [
+  { value: "Bug", label: "Bug" },
+  { value: "Feature", label: "Feature" },
+  { value: "improvement", label: "Improvement" },
+  { value: "ui", label: "UI" },
+  { value: "documentation", label: "Documentation" },
+  { value: "backend", label: "Backend" },
+  { value: "testing", label: "Testing" },
+  { value: "refactor", label: "Refactor" },
+  { value: "performance", label: "Performance" },
+  { value: "security", label: "Security" },
 ]
 
 export const taskMockData = taskSchema.array().parse(tasksData)

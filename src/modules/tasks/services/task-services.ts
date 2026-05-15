@@ -32,8 +32,8 @@ export function getTaskStats(tasks: Task[]) {
 
   return {
     total,
-    completed: tasks.filter((task) => task.status === "completed").length,
-    inProgress: tasks.filter((task) => task.status === "in progress").length,
-    pending: tasks.filter((task) => task.status === "pending").length,
+    todo: tasks.filter((task) => task.status === "todo").length,
+    inProgress: tasks.filter((task) => task.status === "in_progress").length,
+    done: tasks.filter((task) => task.status === "done").length,
   }
 }
