@@ -5,6 +5,7 @@ import { seedCalendarMockData } from "@/modules/calendar/services/mock-data-serv
 import { seedChatMockData } from "@/modules/chat/services/mock-data-services"
 import { seedCustomerCareMockData } from "@/modules/customer-care/services/mock-data-services"
 import { seedDashboardMockData } from "@/modules/dashboard/services/mock-data-services"
+import { seedRevenuesMockData } from "@/modules/dashboard/services/revenue-mock-data-services"
 import { seedDashboard2MockData } from "@/modules/dashboard-2/services/mock-data-services"
 import { seedDashboard3MockData } from "@/modules/dashboard-3/services/mock-data-services"
 import { seedFaqsMockData } from "@/modules/faqs/services/mock-data-services"
@@ -23,6 +24,7 @@ export const mockDataFeatures = [
   { id: "customer-care", label: "Customer Care", seed: seedCustomerCareMockData },
   { id: "mail", label: "Mail", seed: seedMailMockData },
   { id: "dashboard", label: "Dashboard", seed: seedDashboardMockData },
+  { id: "revenues", label: "Revenues", seed: seedRevenuesMockData },
   { id: "dashboard-2", label: "Dashboard 2", seed: seedDashboard2MockData },
   { id: "dashboard-3", label: "Dashboard 3", seed: seedDashboard3MockData },
   { id: "faqs", label: "FAQs", seed: seedFaqsMockData },

@@ -17,6 +17,7 @@ import {
   CreditCard,
   LayoutTemplate,
   Users,
+  BarChart3,
 } from "lucide-react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
@@ -57,6 +58,11 @@ const data = {
           title: "Dashboard 3",
           url: "/dashboard-3",
           icon: Megaphone,
+        },
+        {
+          title: "Biểu đồ doanh thu",
+          url: "/chart",
+          icon: BarChart3,
         },
       ],
     },
