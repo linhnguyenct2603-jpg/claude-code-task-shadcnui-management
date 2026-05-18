@@ -1,6 +1,6 @@
 "use client"
 
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
+import { collection, onSnapshot, query, orderBy, where } from "firebase/firestore"
 import { db } from "@/lib/firebase/client"
 import { revenueMockData } from "./revenue-mock-data"
 import type { Revenue } from "./types/revenue-types"
@@ -11,6 +11,28 @@ export function subscribeToRevenues(
 ): () => void {
   const q = query(collection(db, "revenues"), orderBy("month", "asc"))
 
+  return subscribeWithQuery(q, onData, onError)
+}
+
+export function subscribeToRevenuesByYear(
+  year: number,
+  onData: (data: Revenue[]) => void,
+  onError?: (error: Error) => void
+): () => void {
+  const q = query(
+    collection(db, "revenues"),
+    where("year", "==", year),
+    orderBy("month", "asc")
+  )
+
+  return subscribeWithQuery(q, onData, onError)
+}
+
+function subscribeWithQuery(
+  q: ReturnType<typeof query>,
+  onData: (data: Revenue[]) => void,
+  onError?: (error: Error) => void
+): () => void {
   const unsubscribe = onSnapshot(
     q,
     (snapshot) => {
@@ -20,11 +42,11 @@ export function subscribeToRevenues(
       }
 
       const data: Revenue[] = snapshot.docs.map((doc) => {
-        const raw = doc.data()
+        const raw = doc.data() as Record<string, unknown>
         return {
           ...raw,
           id: doc.id,
-        } as Revenue
+        } as unknown as Revenue
       })
 
       onData(data)
@@ -37,4 +59,9 @@ export function subscribeToRevenues(
   )
 
   return unsubscribe
+}
+
+export function getAvailableYears(data: Revenue[]): number[] {
+  const years = new Set(data.map((r) => r.year))
+  return Array.from(years).sort((a, b) => b - a)
 }
