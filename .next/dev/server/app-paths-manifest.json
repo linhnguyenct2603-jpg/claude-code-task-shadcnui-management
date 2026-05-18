@@ -1,4 +1,1 @@
-{
-  "/(dashboard)/chart/page": "app/(dashboard)/chart/page.js",
-  "/(dashboard)/mock-data/page": "app/(dashboard)/mock-data/page.js"
-}
+{}

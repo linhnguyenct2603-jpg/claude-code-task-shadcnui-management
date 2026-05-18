@@ -236,6 +236,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/(dashboard)/quiz-monitor/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/quiz-monitor">> = Specific
+  const handler = {} as typeof import("../../../src/app/(dashboard)/quiz-monitor/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/(dashboard)/quiz/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/quiz">> = Specific
+  const handler = {} as typeof import("../../../src/app/(dashboard)/quiz/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/(dashboard)/settings/account/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/settings/account">> = Specific

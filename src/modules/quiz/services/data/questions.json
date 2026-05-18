@@ -1,0 +1,102 @@
+[
+  {
+    "id": "Q001",
+    "content": "What is the largest mammal on Earth?",
+    "option1": "Elephant",
+    "option2": "Blue Whale",
+    "option3": "Giraffe",
+    "option4": "Hippopotamus",
+    "correctOption": "Blue Whale",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q002",
+    "content": "Which animal is known as the 'King of the Jungle'?",
+    "option1": "Tiger",
+    "option2": "Lion",
+    "option3": "Leopard",
+    "option4": "Cheetah",
+    "correctOption": "Lion",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q003",
+    "content": "How many legs does a spider have?",
+    "option1": "6",
+    "option2": "8",
+    "option3": "10",
+    "option4": "4",
+    "correctOption": "8",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q004",
+    "content": "What is the fastest land animal?",
+    "option1": "Lion",
+    "option2": "Cheetah",
+    "option3": "Horse",
+    "option4": "Greyhound",
+    "correctOption": "Cheetah",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q005",
+    "content": "Which bird is known for its ability to mimic human speech?",
+    "option1": "Crow",
+    "option2": "Sparrow",
+    "option3": "Parrot",
+    "option4": "Pigeon",
+    "correctOption": "Parrot",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q006",
+    "content": "What animal has a long trunk and large ears?",
+    "option1": "Rhinoceros",
+    "option2": "Hippopotamus",
+    "option3": "Elephant",
+    "option4": "Wild Boar",
+    "correctOption": "Elephant",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q007",
+    "content": "Which sea creature has eight arms called tentacles?",
+    "option1": "Jellyfish",
+    "option2": "Starfish",
+    "option3": "Squid",
+    "option4": "Octopus",
+    "correctOption": "Octopus",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q008",
+    "content": "What is the tallest living animal on land?",
+    "option1": "Elephant",
+    "option2": "Camel",
+    "option3": "Giraffe",
+    "option4": "Ostrich",
+    "correctOption": "Giraffe",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q009",
+    "content": "Which animal sleeps standing up and can run shortly after birth?",
+    "option1": "Cow",
+    "option2": "Sheep",
+    "option3": "Horse",
+    "option4": "Donkey",
+    "correctOption": "Horse",
+    "topic": "Animals"
+  },
+  {
+    "id": "Q010",
+    "content": "What is a baby dog called?",
+    "option1": "Cub",
+    "option2": "Pup",
+    "option3": "Calf",
+    "option4": "Foal",
+    "correctOption": "Pup",
+    "topic": "Animals"
+  }
+]
