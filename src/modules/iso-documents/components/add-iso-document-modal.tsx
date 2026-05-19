@@ -3,6 +3,7 @@
 import { useCallback, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import type { UseFormReturn } from "react-hook-form"
 import { Upload, X, FileText, Plus, Loader2, Trash2 } from "lucide-react"
 import { toast } from "sonner"
 
@@ -37,6 +38,7 @@ import {
   createIsoDocumentSchema,
   type IsoDocument,
   type Attachment,
+  type CreateIsoDocumentValues,
 } from "../services/types/iso-document-types"
 import {
   createIsoDocumentWithId,
@@ -44,7 +46,6 @@ import {
   getFileExtension,
   uploadAttachments,
   STATUS_OPTIONS,
-  FILE_TYPE_OPTIONS,
 } from "../services/iso-document-services"
 
 interface AddIsoDocumentModalProps {
@@ -64,8 +65,10 @@ export function AddIsoDocumentModal({
   const [isDragging, setIsDragging] = useState(false)
   const [primaryFile, setPrimaryFile] = useState<File | null>(null)
 
-  const form = useForm({
-    resolver: zodResolver(createIsoDocumentSchema),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const form = useForm<CreateIsoDocumentValues>({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolver: zodResolver(createIsoDocumentSchema) as any,
     defaultValues: {
       name: "",
       status: "draft",
@@ -121,9 +124,7 @@ export function AddIsoDocumentModal({
     setAttachmentSummaries((prev) => ({ ...prev, [index]: summary }))
   }
 
-  const handleSubmit = async (
-    values: { name: string; status: "draft" | "published" }
-  ) => {
+  const handleSubmit = async (values: { name: string; status: string }) => {
     setSubmitting(true)
     try {
       const docId = `iso-${Date.now()}`
