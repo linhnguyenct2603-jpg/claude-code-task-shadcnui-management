@@ -799,3 +799,10 @@ Import traces:
 [01:04:24.519] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
 [01:04:29.753] Server  LOG     ✓ Compiled in 226ms
 [01:04:29.934] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:09.239] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:27.088] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:34.037] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:37.225] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:39.086] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:51.892] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:06:53.292] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
