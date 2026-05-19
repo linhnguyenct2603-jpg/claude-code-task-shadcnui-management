@@ -1,95 +1,639 @@
-[00:00:03.124] Server  LOG     ✓ Ready in 2.4s
-[00:00:09.472] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.329] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:13.600] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:00:04.441] Server  LOG     ✓ Ready in 3.5s
+[00:00:51.004] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.909] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:53.872] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:13.601] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:00:53.872] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:26.341] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.805] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:27.394] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:03:05.946] Browser WARN    [Revenue] Firestore realtime error: {"code":"failed-precondition","name":"FirebaseError"}
+[00:03:05.946] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:27.395] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:03:05.946] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:40.116] Browser WARN    [Revenue] Firestore realtime error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:00:40.116] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:07:25.479] Browser WARN    [2026-05-19T04:46:38.238Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434c8 transport errored. Name: undefined Message: undefined
+[00:07:27.726] Browser WARN    [2026-05-19T04:46:40.473Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434ca transport errored. Name: undefined Message: undefined
+[00:07:27.726] Browser WARN    [2026-05-19T04:46:40.478Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434cb transport errored. Name: undefined Message: undefined
+[00:07:27.726] Browser WARN    [2026-05-19T04:46:40.483Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434cc transport errored. Name: undefined Message: undefined
+[00:07:27.726] Browser WARN    [2026-05-19T04:46:40.489Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434cd transport errored. Name: undefined Message: undefined
+[00:07:28.575] Browser WARN    [2026-05-19T04:46:41.330Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434ce transport errored. Name: undefined Message: undefined
+[00:07:28.704] Browser WARN    [2026-05-19T04:46:41.463Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434cf transport errored. Name: undefined Message: undefined
+[00:07:29.705] Browser WARN    [2026-05-19T04:46:42.463Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434d0 transport errored. Name: undefined Message: undefined
+[00:07:30.457] Browser WARN    [2026-05-19T04:46:43.212Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434d1 transport errored. Name: undefined Message: undefined
+[00:07:31.372] Browser WARN    [2026-05-19T04:46:44.128Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434d2 transport errored. Name: undefined Message: undefined
+[00:07:35.936] Browser WARN    [2026-05-19T04:46:48.695Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434d3 transport errored. Name: undefined Message: undefined
+[00:07:35.936] Browser WARN    [2026-05-19T04:46:48.696Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434d4 transport errored. Name: undefined Message: undefined
+[00:07:35.936] Browser WARN    [2026-05-19T04:46:48.701Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434d5 transport errored. Name: undefined Message: undefined
+[00:07:41.198] Browser WARN    [2026-05-19T04:46:53.953Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434d6 transport errored. Name: undefined Message: undefined
+[00:07:42.278] Browser WARN    [2026-05-19T04:46:55.036Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434d7 transport errored. Name: undefined Message: undefined
+[00:07:50.141] Browser WARN    [2026-05-19T04:47:02.895Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434d8 transport errored. Name: undefined Message: undefined
+[00:07:50.724] Browser WARN    [2026-05-19T04:47:03.478Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434d9 transport errored. Name: undefined Message: undefined
+[00:08:01.197] Browser WARN    [2026-05-19T04:47:13.953Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434da transport errored. Name: undefined Message: undefined
+[00:08:03.060] Browser WARN    [2026-05-19T04:47:15.819Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434db transport errored. Name: undefined Message: undefined
+[00:08:12.272] Browser WARN    [2026-05-19T04:47:25.040Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434dc transport errored. Name: undefined Message: undefined
+[00:08:23.545] Browser WARN    [2026-05-19T04:47:36.301Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434dd transport errored. Name: undefined Message: undefined
+[00:08:47.891] Browser WARN    [2026-05-19T04:48:00.646Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434de transport errored. Name: undefined Message: undefined
+[00:08:49.740] Browser WARN    [2026-05-19T04:48:02.495Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434df transport errored. Name: undefined Message: undefined
+[00:09:40.114] Browser WARN    [2026-05-19T04:48:52.869Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434e0 transport errored. Name: undefined Message: undefined
+[00:09:43.294] Browser WARN    [2026-05-19T04:48:56.049Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434e1 transport errored. Name: undefined Message: undefined
+[00:10:05.770] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:00:40.116] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:05.770] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:03:27.383] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:10.399] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:03:27.383] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:10.399] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:03:27.383] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:10.399] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:03:27.383] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:10.399] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:05:01.760] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:13.051] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:05:01.761] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:13.051] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:05:01.761] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:13.051] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:05:01.761] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:10:13.051] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:06:34.096] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:34.096] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:34.096] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:34.096] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:41.171] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:41.171] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:41.171] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:41.171] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:14:54.230] Server  LOG     ✓ Compiled in 743ms
+[00:10:42.858] Browser WARN    [2026-05-19T04:49:54.730Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434e2 transport errored. Name: undefined Message: undefined
+[00:10:49.872] Browser WARN    [2026-05-19T04:50:01.742Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434e3 transport errored. Name: undefined Message: undefined
+[00:11:39.871] Browser WARN    [2026-05-19T04:50:51.730Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x7fd434e4 transport errored. Name: undefined Message: undefined
+[00:11:42.859] Browser WARN    [2026-05-19T04:50:54.732Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Write' stream 0x7fd434e5 transport errored. Name: undefined Message: undefined
+[00:35:03.356] Server  LOG     ✓ Compiled in 986ms
+[00:35:03.862] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:03.862] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:31.880] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:31.880] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:32.865] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:32.865] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:32.865] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:32.865] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:55.871] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:55.871] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:55.871] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:55.871] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:56.993] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:35:56.993] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:50.875] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:50.875] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:51.451] Server  LOG     ✓ Compiled in 504ms
+[00:36:51.866] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:51.866] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:52.480] Server  LOG     ✓ Compiled in 371ms
+[00:36:52.860] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:52.860] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:53.761] Server  LOG     ✓ Compiled in 604ms
+[00:36:53.870] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:36:53.870] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:37:12.135] Server  LOG     ✓ Compiled in 705ms
+[00:37:12.863] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-client] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:37:12.864] Browser ERROR   ./src/app/(dashboard)/chat/page.tsx:6:1
+Export getChatData doesn't exist in target module
+  4 |
+  5 | import { Chat } from "@/modules/chat/components/chat"
+> 6 | import { getChatData } from "@/modules/chat/services/chat-services"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { type Conversation, type Message, type User } from "@/modules/chat/services/types/chat-types"
+  8 |
+  9 | export default function ChatPage() {
+
+The export getChatData was not found in module [project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript).
+Did you mean to import useChat?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[00:37:23.342] Server  LOG     ✓ Compiled in 260ms
+[00:37:25.662] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:21.739] Server  LOG     ✓ Compiled in 422ms
+[00:49:01.515] Browser WARN    Firestore friends listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:49:28.143] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:49:28.367] Browser ERROR   unhandledRejection: FirebaseError: No document to update: projects/claude-code-task-managem-1bc2a/databases/(default)/documents/friends/user-5
+[00:49:44.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:49:44.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:50:07.558] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:50:07.726] Browser ERROR   unhandledRejection: FirebaseError: No document to update: projects/claude-code-task-managem-1bc2a/databases/(default)/documents/friends/user-2
+[00:50:29.590] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:50:29.767] Browser ERROR   unhandledRejection: FirebaseError: No document to update: projects/claude-code-task-managem-1bc2a/databases/(default)/documents/friends/user-3
+[00:51:22.993] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:51:23.144] Browser ERROR   unhandledRejection: FirebaseError: No document to update: projects/claude-code-task-managem-1bc2a/databases/(default)/documents/friends/user-5
+[00:54:23.081] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:55:01.265] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:11.866] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

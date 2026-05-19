@@ -1,11 +1,6 @@
-import conversationsData from "./data/conversations.json"
+import friendsData from "./data/friends.json"
 import messagesData from "./data/messages.json"
-import usersData from "./data/users.json"
+import type { Friend, ChatMessage } from "./types/chat-types"
 
-import type { Conversation, Message, User } from "./types/chat-types"
-
-export const chatMockData = {
-  conversations: conversationsData as Conversation[],
-  messages: messagesData as Record<string, Message[]>,
-  users: usersData as User[],
-}
+export const friendMockData = friendsData as Friend[]
+export const messageMockData = messagesData as Record<string, ChatMessage[]>

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "user-2",
+    "name": "Sarah Mitchell",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-7",
+    "status": "online",
+    "lastMessage": {
+      "text": "Thanks for the quick update! The dashboard looks amazing",
+      "updated": "2025-08-11T15:30:00Z"
+    },
+    "unreadCount": 2
+  },
+  {
+    "id": "user-3",
+    "name": "Emily Rodriguez",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-2",
+    "status": "online",
+    "lastMessage": {
+      "text": "Let's review the wireframes together tomorrow",
+      "updated": "2025-08-10T16:30:00Z"
+    },
+    "unreadCount": 1
+  },
+  {
+    "id": "user-4",
+    "name": "David Kim",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=male-5",
+    "status": "offline",
+    "lastMessage": {
+      "text": "Marketing campaign is scheduled for next week",
+      "updated": "2025-08-11T08:15:00Z"
+    },
+    "unreadCount": 0
+  },
+  {
+    "id": "user-5",
+    "name": "Lisa Chen",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-4",
+    "status": "online",
+    "lastMessage": {
+      "text": "Found a few edge cases in the new feature",
+      "updated": "2025-08-06T14:20:00Z"
+    },
+    "unreadCount": 0
+  },
+  {
+    "id": "user-6",
+    "name": "Alex Thompson",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=male-1",
+    "status": "offline",
+    "lastMessage": {
+      "text": "Code review completed, looks good to merge!",
+      "updated": "2025-01-15T17:45:00Z"
+    },
+    "unreadCount": 0
+  }
+]
