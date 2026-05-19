@@ -1792,6 +1792,10 @@
     width: calc(var(--spacing) * 80);
   }
 
+  .w-96 {
+    width: calc(var(--spacing) * 96);
+  }
+
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
@@ -1802,6 +1806,10 @@
 
   .w-\[1\.2rem\] {
     width: 1.2rem;
+  }
+
+  .w-\[40px\] {
+    width: 40px;
   }
 
   .w-\[70px\] {
@@ -1904,6 +1912,10 @@
     max-width: 70%;
   }
 
+  .max-w-\[80px\] {
+    max-width: 80px;
+  }
+
   .max-w-\[95vw\] {
     max-width: 95vw;
   }
@@ -1918,6 +1930,10 @@
 
   .max-w-\[200px\] {
     max-width: 200px;
+  }
+
+  .max-w-\[240px\] {
+    max-width: 240px;
   }
 
   .max-w-\[300px\] {
@@ -1938,6 +1954,10 @@
 
   .max-w-\[calc\(100\%-2rem\)\] {
     max-width: calc(100% - 2rem);
+  }
+
+  .max-w-lg {
+    max-width: var(--container-lg);
   }
 
   .max-w-max {
@@ -1988,8 +2008,16 @@
     min-width: 20px;
   }
 
+  .min-w-\[80px\] {
+    min-width: 80px;
+  }
+
   .min-w-\[140px\] {
     min-width: 140px;
+  }
+
+  .min-w-\[200px\] {
+    min-width: 200px;
   }
 
   .min-w-\[250px\] {
@@ -3988,6 +4016,11 @@
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
 
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -4112,6 +4145,10 @@
 
   .text-accent-foreground {
     color: var(--accent-foreground);
+  }
+
+  .text-amber-500 {
+    color: var(--color-amber-500);
   }
 
   .text-background {
@@ -4286,6 +4323,10 @@
 
   .text-transparent {
     color: #0000;
+  }
+
+  .text-violet-500 {
+    color: var(--color-violet-500);
   }
 
   .text-white {
@@ -7587,6 +7628,16 @@
     }
   }
 
+  .dark\:bg-green-950\/30:is(.dark *) {
+    background-color: #032e154d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-green-950\/30:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-green-950) 30%, transparent);
+    }
+  }
+
   .dark\:bg-input\/30:is(.dark *) {
     background-color: var(--input);
   }
@@ -7658,6 +7709,16 @@
   @supports (color: color-mix(in lab, red, red)) {
     .dark\:bg-red-950\/20:is(.dark *) {
       background-color: color-mix(in oklab, var(--color-red-950) 20%, transparent);
+    }
+  }
+
+  .dark\:bg-red-950\/30:is(.dark *) {
+    background-color: #4608094d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-red-950\/30:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-red-950) 30%, transparent);
     }
   }
 
