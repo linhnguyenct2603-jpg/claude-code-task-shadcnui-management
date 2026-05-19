@@ -1,0 +1,67 @@
+[
+  {
+    "id": "iso-001",
+    "name": "Quy trình An toàn Lao động",
+    "type": "pdf",
+    "status": "published",
+    "size": "2.4 MB",
+    "updatedAt": "2025-11-10T09:30:00Z",
+    "attachments": [
+      {
+        "filename": "quy-trinh-atld-v1.pdf",
+        "filetype": "pdf",
+        "url": "https://example.com/quy-trinh-atld-v1.pdf",
+        "summary": "Quy trình an toàn lao động phiên bản 1.0"
+      }
+    ]
+  },
+  {
+    "id": "iso-002",
+    "name": "Biểu mẫu Đánh giá Nhân viên",
+    "type": "docx",
+    "status": "draft",
+    "size": "1.1 MB",
+    "updatedAt": "2025-11-08T14:20:00Z",
+    "attachments": []
+  },
+  {
+    "id": "iso-003",
+    "name": "Báo cáo Tài chính Quý 3/2025",
+    "type": "xlsx",
+    "status": "published",
+    "size": "3.7 MB",
+    "updatedAt": "2025-11-05T11:00:00Z",
+    "attachments": [
+      {
+        "filename": "bao-cao-tai-chinh-q3.xlsx",
+        "filetype": "xlsx",
+        "url": "https://example.com/bao-cao-tai-chinh-q3.xlsx",
+        "summary": "Báo cáo tài chính quý 3 năm 2025"
+      },
+      {
+        "filename": "bieu-mau-bieu-do.pdf",
+        "filetype": "pdf",
+        "url": "https://example.com/bieu-mau-bieu-do.pdf",
+        "summary": "Mẫu biểu đồ phân tích"
+      }
+    ]
+  },
+  {
+    "id": "iso-004",
+    "name": "Hướng dẫn Sử dụng Hệ thống ERP",
+    "type": "pdf",
+    "status": "draft",
+    "size": "5.2 MB",
+    "updatedAt": "2025-10-28T16:45:00Z",
+    "attachments": []
+  },
+  {
+    "id": "iso-005",
+    "name": "Chính sách Bảo mật Thông tin",
+    "type": "pdf",
+    "status": "published",
+    "size": "890 KB",
+    "updatedAt": "2025-10-15T08:00:00Z",
+    "attachments": []
+  }
+]

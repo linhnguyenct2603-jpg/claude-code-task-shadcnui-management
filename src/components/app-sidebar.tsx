@@ -20,6 +20,7 @@ import {
   LayoutTemplate,
   Users,
   BarChart3,
+  FileText,
 } from "lucide-react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
@@ -95,6 +96,11 @@ const data = {
           title: "Users",
           url: "/users",
           icon: Users,
+        },
+        {
+          title: "Biểu mẫu ISO",
+          url: "/iso-documents",
+          icon: FileText,
         },
         {
           title: "Quiz",

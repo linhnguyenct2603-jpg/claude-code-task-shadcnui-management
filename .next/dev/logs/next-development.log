@@ -851,3 +851,14 @@ Import traces:
 [01:12:16.278] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [01:12:23.221] Server  LOG     ✓ Compiled in 226ms
 [01:12:36.266] Server  LOG     ✓ Compiled in 176ms
+[02:25:26.186] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}
+[02:25:32.646] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[02:25:38.830] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[02:25:40.223] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[02:25:55.482] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[02:25:56.675] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[03:15:30.372] Server  LOG     ✓ Compiled in 540ms
+[03:16:12.587] Server  LOG     ✓ Compiled in 331ms
+[03:17:00.881] Server  LOG     ✓ Compiled in 316ms
+[03:17:25.197] Server  LOG     ✓ Compiled in 1051ms
+[03:17:26.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
