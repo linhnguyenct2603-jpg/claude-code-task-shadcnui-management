@@ -16,3 +16,12 @@
 [00:01:15.421] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [00:01:45.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [00:01:45.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:24.612] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. iso-1779183396553
+[00:03:27.376] Browser WARN    [2026-05-19T09:36:41.224Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x30bc8619 transport errored. Name: undefined Message: undefined
+[00:03:27.376] Browser WARN    [2026-05-19T09:36:41.232Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x30bc861a transport errored. Name: undefined Message: undefined
+[00:03:28.116] Browser WARN    [2026-05-19T09:36:41.972Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x30bc861b transport errored. Name: undefined Message: undefined
+[00:03:28.370] Browser WARN    [2026-05-19T09:36:42.222Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x30bc861c transport errored. Name: undefined Message: undefined
+[00:03:28.370] Browser WARN    [2026-05-19T09:36:42.230Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x30bc861d transport errored. Name: undefined Message: undefined
+[00:03:29.617] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:29.617] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:19.260] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
