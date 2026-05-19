@@ -1,34 +1,35 @@
-[00:00:03.374] Server  LOG     ✓ Ready in 2.6s
-[00:00:06.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:49.039] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:01:06.804] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:08.141] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:01:09.084] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:00:03.158] Server  LOG     ✓ Ready in 2.4s
+[00:00:21.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.518] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:27.087] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:01:09.084] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+[00:00:27.087] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
-[00:01:45.657] Browser WARN    [2026-05-19T08:22:41.676Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93ed transport errored. Name: undefined Message: undefined
-[00:01:45.657] Browser ERROR   [2026-05-19T08:22:41.677Z]  @firebase/firestore: Firestore (12.12.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=unavailable]: The operation could not be completed
-This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
-[00:01:49.976] Browser WARN    [2026-05-19T08:22:46.015Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93ee transport errored. Name: undefined Message: undefined
-[00:02:07.918] Browser WARN    [2026-05-19T08:23:03.953Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93ef transport errored. Name: undefined Message: undefined
-[00:02:11.924] Browser WARN    [2026-05-19T08:23:07.961Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f0 transport errored. Name: undefined Message: undefined
-[00:02:20.423] Browser WARN    [2026-05-19T08:23:16.461Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f1 transport errored. Name: undefined Message: undefined
-[00:02:22.684] Browser WARN    [2026-05-19T08:23:18.628Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f3 transport errored. Name: undefined Message: undefined
-[00:02:22.684] Browser WARN    [2026-05-19T08:23:18.633Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f4 transport errored. Name: undefined Message: undefined
-[00:02:29.609] Browser WARN    [2026-05-19T08:23:25.649Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f6 transport errored. Name: undefined Message: undefined
-[00:02:52.587] Browser WARN    [2026-05-19T08:23:48.620Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f7 transport errored. Name: undefined Message: undefined
-[00:02:56.586] Browser WARN    [2026-05-19T08:23:52.626Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x523d93f8 transport errored. Name: undefined Message: undefined
-[00:03:55.640] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. iso-1779178987275
-[00:04:22.117] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:04:22.117] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
+[00:01:48.827] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:01:48.828] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:21.120] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:21.120] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:42.346] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:42.346] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:44.624] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:44.624] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:06.222] Server  LOG     ✓ Compiled in 2.1s
+[00:07:53.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:36.770] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:40.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:08:40.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:52.138] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:52.138] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:03.206] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:03.206] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:46.328] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:46.328] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:51.712] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:11:51.713] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:12:44.847] Server  LOG     ✓ Compiled in 660ms
+[00:15:28.520] Browser WARN    [2026-05-19T08:57:41.960Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x1341da83 transport errored. Name: undefined Message: undefined
+[00:15:28.520] Browser WARN    [2026-05-19T08:57:42.093Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x1341da84 transport errored. Name: undefined Message: undefined

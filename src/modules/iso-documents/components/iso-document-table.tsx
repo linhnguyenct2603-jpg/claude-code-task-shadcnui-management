@@ -47,6 +47,7 @@ import {
   FILE_TYPE_OPTIONS,
   STATUS_OPTIONS,
 } from "../services/iso-document-services"
+import { IsoDocumentDetailModal } from "./iso-document-detail-modal"
 
 // ── File type badge colors ───────────────────────────────────────────────────
 
@@ -194,6 +195,8 @@ export function IsoDocumentTable({
   const [deleteOpen, setDeleteOpen] = useState(false)
   const [docToDelete, setDocToDelete] = useState<IsoDocument | null>(null)
   const [deleting, setDeleting] = useState(false)
+  const [detailOpen, setDetailOpen] = useState(false)
+  const [docToView, setDocToView] = useState<IsoDocument | null>(null)
 
   // Filter logic
   const filtered = useMemo(() => {
@@ -276,7 +279,13 @@ export function IsoDocumentTable({
               filtered.map((doc) => (
                 <TableRow key={doc.id}>
                   <TableCell>
-                    <div className="flex items-center gap-3">
+                    <button
+                      className="flex items-center gap-3 text-left hover:text-primary transition-colors cursor-pointer w-full"
+                      onClick={() => {
+                        setDocToView(doc)
+                        setDetailOpen(true)
+                      }}
+                    >
                       <FileText className="h-5 w-5 text-muted-foreground flex-shrink-0" />
                       <div className="min-w-0">
                         <p className="font-medium truncate max-w-[300px]">{doc.name}</p>
@@ -286,7 +295,7 @@ export function IsoDocumentTable({
                           </p>
                         )}
                       </div>
-                    </div>
+                    </button>
                   </TableCell>
                   <TableCell>
                     <FileTypeBadge type={doc.type} />
@@ -314,6 +323,16 @@ export function IsoDocumentTable({
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
+                        <DropdownMenuItem
+                          className="cursor-pointer"
+                          onClick={() => {
+                            setDocToView(doc)
+                            setDetailOpen(true)
+                          }}
+                        >
+                          <Eye className="h-4 w-4 mr-2" />
+                          Xem chi tiết
+                        </DropdownMenuItem>
                         <DropdownMenuItem
                           className="cursor-pointer"
                           onClick={() => handleToggleStatus(doc)}
@@ -375,6 +394,13 @@ export function IsoDocumentTable({
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Document detail modal */}
+      <IsoDocumentDetailModal
+        open={detailOpen}
+        onOpenChange={setDetailOpen}
+        document={docToView}
+      />
     </div>
   )
 }
