@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { format } from "date-fns"
 import {
   FileText,
@@ -9,7 +9,10 @@ import {
   Paperclip,
   Clock,
   Hash,
-  Eye,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  X,
   Image,
   FileSpreadsheet,
   Presentation,
@@ -26,6 +29,7 @@ import {
 } from "@/components/ui/dialog"
 import { Separator } from "@/components/ui/separator"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Slider } from "@/components/ui/slider"
 import { toast } from "sonner"
 import type { Attachment } from "../services/types/iso-document-types"
 import type { IsoDocument } from "../services/types/iso-document-types"
@@ -78,14 +82,14 @@ function getFileColor(
 
 function getFileIcon(filetype: string) {
   const t = filetype.toLowerCase()
-  if (t === "pdf") return <FileText className="h-7 w-7" />
+  if (t === "pdf") return <FileText className="h-8 w-8" />
   if (["png", "jpg", "jpeg", "gif", "webp"].includes(t))
-    return <Image className="h-7 w-7" />
+    return <Image className="h-8 w-8" />
   if (["xlsx", "xls"].includes(t))
-    return <FileSpreadsheet className="h-7 w-7" />
+    return <FileSpreadsheet className="h-8 w-8" />
   if (["pptx", "ppt"].includes(t))
-    return <Presentation className="h-7 w-7" />
-  return <FileText className="h-7 w-7" />
+    return <Presentation className="h-8 w-8" />
+  return <FileText className="h-8 w-8" />
 }
 
 function isMockUrl(url: string): boolean {
@@ -103,11 +107,13 @@ function isImageType(filetype: string): boolean {
   return ["png", "jpg", "jpeg", "gif", "webp"].includes(filetype.toLowerCase())
 }
 
-function isPdfType(filetype: string): boolean {
-  return filetype.toLowerCase() === "pdf"
+function isDocType(filetype: string): boolean {
+  return ["pdf", "docx", "doc", "pptx", "ppt", "xlsx", "xls"].includes(
+    filetype.toLowerCase()
+  )
 }
 
-// ── Download / open handlers ─────────────────────────────────────────────────
+// ── Handlers ─────────────────────────────────────────────────────────────────
 
 function handleDownload(url: string, filename: string) {
   const link = document.createElement("a")
@@ -125,59 +131,200 @@ function openInNewTab(url: string) {
   window.open(url, "_blank", "noopener,noreferrer")
 }
 
-// ── Preview panel ────────────────────────────────────────────────────────────
+// ── Image preview modal ───────────────────────────────────────────────────────
 
-interface PreviewPanelProps {
+interface ImagePreviewModalProps {
   attachment: Attachment | null
   onClose: () => void
 }
 
-function PreviewPanel({ attachment, onClose }: PreviewPanelProps) {
+function ImagePreviewModal({
+  attachment,
+  onClose,
+}: ImagePreviewModalProps) {
+  const [scale, setScale] = useState(1)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
+
+  const resetView = useCallback(() => {
+    setScale(1)
+    setPosition({ x: 0, y: 0 })
+  }, [])
+
+  const zoomIn = () => setScale((s) => Math.min(s + 0.25, 3))
+  const zoomOut = () => setScale((s) => Math.max(s - 0.25, 0.25))
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale <= 1) return
+    setIsDragging(true)
+    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y })
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    setPosition({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y,
+    })
+  }
+
+  const handleMouseUp = () => setIsDragging(false)
+
   if (!attachment) return null
 
-  const filetype = attachment.filetype.toLowerCase()
-  const mock = isMockUrl(attachment.url)
+  return (
+    <Dialog open={!!attachment} onOpenChange={onClose}>
+      <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b shrink-0">
+          <div className="flex items-center gap-2 min-w-0">
+            <Image className="h-4 w-4 text-muted-foreground shrink-0" />
+            <span className="text-sm font-medium truncate">
+              {attachment.filename}
+            </span>
+            <Badge variant="secondary" className="text-xs shrink-0">
+              {Math.round(scale * 100)}%
+            </Badge>
+          </div>
+          <div className="flex items-center gap-1 shrink-0">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={zoomOut}
+              title="Thu nhỏ"
+            >
+              <ZoomOut className="h-4 w-4" />
+            </Button>
+            <div className="w-[100px] px-1">
+              <Slider
+                value={[scale]}
+                min={0.25}
+                max={3}
+                step={0.05}
+                onValueChange={(value) => setScale(value[0])}
+              />
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={zoomIn}
+              title="Phóng to"
+            >
+              <ZoomIn className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={resetView}
+              title="Đặt lại"
+            >
+              <RotateCcw className="h-4 w-4" />
+            </Button>
+            <Separator orientation="vertical" className="h-5 mx-1" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={() => openInNewTab(attachment.url)}
+              title="Mở trong tab mới"
+            >
+              <ExternalLink className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={() => handleDownload(attachment.url, attachment.filename)}
+              title="Tải xuống"
+            >
+              <Download className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 cursor-pointer"
+              onClick={onClose}
+              title="Đóng"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Image canvas */}
+        <div
+          className="flex-1 overflow-hidden bg-black/95 flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={attachment.url}
+            alt={attachment.filename}
+            draggable={false}
+            style={{
+              transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+              transition: isDragging ? "none" : "transform 0.15s ease",
+              maxWidth: "90vw",
+              maxHeight: "calc(90vh - 60px)",
+            }}
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+// ── File action card (PDF, Docx, Xlsx, Pptx...) ───────────────────────────────
+
+interface FileActionCardProps {
+  attachment: Attachment
+}
+
+function FileActionCard({ attachment }: FileActionCardProps) {
   const colors = getFileColor(attachment.filetype)
-  const isImage = isImageType(filetype)
-  const isPdf = isPdfType(filetype)
+  const mock = isMockUrl(attachment.url)
+
+  const label =
+    attachment.filetype.toLowerCase() === "pdf"
+      ? "Mở PDF"
+      : attachment.filetype.toLowerCase() === "docx" ||
+          attachment.filetype.toLowerCase() === "doc"
+        ? "Mở tài liệu"
+        : attachment.filetype.toLowerCase() === "xlsx" ||
+            attachment.filetype.toLowerCase() === "xls"
+          ? "Mở bảng tính"
+          : attachment.filetype.toLowerCase() === "pptx" ||
+              attachment.filetype.toLowerCase() === "ppt"
+            ? "Mở bản trình chiếu"
+            : "Mở file"
 
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Eye className="h-4 w-4 text-muted-foreground" />
-          <span className="text-sm font-semibold">Xem trước</span>
-          <span className="text-xs text-muted-foreground truncate max-w-[200px]">
-            — {attachment.filename}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-7 w-7 p-0 cursor-pointer"
-            onClick={onClose}
-            title="Đóng xem trước"
-          >
-            ✕
-          </Button>
-        </div>
+    <div className="flex items-start gap-3 p-4 rounded-lg border bg-card">
+      <div
+        className={cn(
+          "flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center",
+          colors.bg
+        )}
+      >
+        <div className={colors.text}>{getFileIcon(attachment.filetype)}</div>
       </div>
 
-      <div className="rounded-lg border overflow-hidden bg-muted/20">
-        {mock ? (
-          /* ── Mock URL: placeholder ── */
-          <div className="flex flex-col items-center gap-3 py-12 px-6 text-center">
-            <div className={cn("p-4 rounded-full", colors.bg)}>
-              <div className={colors.text}>{getFileIcon(attachment.filetype)}</div>
-            </div>
-            <div>
-              <p className="font-medium text-sm">{attachment.filename}</p>
-              <p className="text-xs text-muted-foreground mt-1 max-w-[280px]">
-                File này là dữ liệu mẫu (mock). Không thể xem trực tuyến.
-                Vui lòng tải xuống để xem nội dung.
-              </p>
-            </div>
+      <div className="flex-1 min-w-0">
+        <p className="font-semibold text-sm">{attachment.filename}</p>
+        {attachment.summary && (
+          <p className="text-xs text-muted-foreground mt-0.5">
+            {attachment.summary}
+          </p>
+        )}
+        <div className="flex gap-2 mt-3">
+          {mock ? (
             <Button
               size="sm"
               className="cursor-pointer"
@@ -188,61 +335,15 @@ function PreviewPanel({ attachment, onClose }: PreviewPanelProps) {
               <Download className="h-4 w-4 mr-2" />
               Tải xuống để xem
             </Button>
-          </div>
-        ) : isImage ? (
-          /* ── Image: embed directly ── */
-          <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={attachment.url}
-              alt={attachment.filename}
-              className="w-full max-h-[360px] object-contain"
-            />
-            <div className="absolute bottom-3 right-3 flex gap-2">
-              <Button
-                size="sm"
-                variant="secondary"
-                className="h-8 cursor-pointer shadow-md"
-                onClick={() => openInNewTab(attachment.url)}
-              >
-                <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                Phóng to
-              </Button>
-              <Button
-                size="sm"
-                variant="secondary"
-                className="h-8 cursor-pointer shadow-md"
-                onClick={() =>
-                  handleDownload(attachment.url, attachment.filename)
-                }
-              >
-                <Download className="h-3.5 w-3.5 mr-1.5" />
-                Tải xuống
-              </Button>
-            </div>
-          </div>
-        ) : isPdf ? (
-          /* ── PDF: open in new tab (Firebase Storage blocks iframe) ── */
-          <div className="flex flex-col items-center gap-4 py-12 px-6 text-center">
-            <div className={cn("p-5 rounded-full", colors.bg)}>
-              <div className={colors.text}>
-                <FileText className="h-10 w-10" />
-              </div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm">{attachment.filename}</p>
-              <p className="text-xs text-muted-foreground mt-1 max-w-[280px]">
-                File PDF sẽ được mở trong tab mới để đảm bảo bảo mật.
-              </p>
-            </div>
-            <div className="flex gap-2">
+          ) : (
+            <>
               <Button
                 size="sm"
                 className="cursor-pointer"
                 onClick={() => openInNewTab(attachment.url)}
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
-                Mở PDF trong tab mới
+                {label}
               </Button>
               <Button
                 size="sm"
@@ -255,44 +356,9 @@ function PreviewPanel({ attachment, onClose }: PreviewPanelProps) {
                 <Download className="h-4 w-4 mr-2" />
                 Tải xuống
               </Button>
-            </div>
-          </div>
-        ) : (
-          /* ── Other types (docx, xlsx, pptx...): open in new tab ── */
-          <div className="flex flex-col items-center gap-4 py-12 px-6 text-center">
-            <div className={cn("p-5 rounded-full", colors.bg)}>
-              <div className={colors.text}>{getFileIcon(attachment.filetype)}</div>
-            </div>
-            <div>
-              <p className="font-semibold text-sm">{attachment.filename}</p>
-              <p className="text-xs text-muted-foreground mt-1 max-w-[280px]">
-                Loại file này không hỗ trợ xem trước trực tiếp. Mở bằng ứng
-                dụng tương ứng trên máy tính của bạn.
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <Button
-                size="sm"
-                className="cursor-pointer"
-                onClick={() => openInNewTab(attachment.url)}
-              >
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Mở bằng ứng dụng
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="cursor-pointer"
-                onClick={() =>
-                  handleDownload(attachment.url, attachment.filename)
-                }
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Tải xuống
-              </Button>
-            </div>
-          </div>
-        )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -305,7 +371,6 @@ interface AttachmentRowProps {
   isActive: boolean
   onSelect: () => void
   onDownload: () => void
-  onOpen: () => void
 }
 
 function AttachmentRow({
@@ -313,13 +378,10 @@ function AttachmentRow({
   isActive,
   onSelect,
   onDownload,
-  onOpen,
 }: AttachmentRowProps) {
   const colors = getFileColor(attachment.filetype)
   const mock = isMockUrl(attachment.url)
   const isImage = isImageType(attachment.filetype)
-  const isPdf = isPdfType(attachment.filetype)
-  const canView = (isImage || isPdf) && !mock
 
   return (
     <div
@@ -370,20 +432,6 @@ function AttachmentRow({
       </div>
 
       <div className="flex items-center gap-1 flex-shrink-0">
-        {canView && (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8 cursor-pointer"
-            title="Xem trước"
-            onClick={(e) => {
-              e.stopPropagation()
-              onOpen()
-            }}
-          >
-            <Eye className="h-3.5 w-3.5" />
-          </Button>
-        )}
         <Button
           variant="ghost"
           size="icon"
@@ -414,7 +462,12 @@ export function IsoDocumentDetailModal({
   onOpenChange,
   document,
 }: IsoDocumentDetailModalProps) {
-  const [selectedAttachment, setSelectedAttachment] = useState<Attachment | null>(null)
+  const [selectedAttachment, setSelectedAttachment] = useState<Attachment | null>(
+    null
+  )
+  const [imageModalAttachment, setImageModalAttachment] = useState<Attachment | null>(
+    null
+  )
 
   if (!document) return null
 
@@ -422,167 +475,260 @@ export function IsoDocumentDetailModal({
   const primaryTypeColor = getFileColor(document.type)
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[680px] max-h-[90vh] p-0">
-        <div className="flex flex-col max-h-[90vh]">
-          {/* ── Header ── */}
-          <div className="px-6 pt-6 pb-4">
-            <DialogHeader className="space-y-0">
-              <div className="flex items-start gap-3">
-                <div
-                  className={cn(
-                    "flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center",
-                    primaryTypeColor.bg
-                  )}
-                >
-                  <div className={cn("text-sm font-black uppercase", primaryTypeColor.text)}>
-                    {document.type}
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <DialogTitle className="text-lg leading-snug">
-                    {document.name}
-                  </DialogTitle>
-                  <div className="flex items-center gap-2 mt-1 flex-wrap">
-                    <Badge
-                      variant="outline"
+    <>
+      {/* ── Image full-screen preview modal ── */}
+      <ImagePreviewModal
+        attachment={imageModalAttachment}
+        onClose={() => setImageModalAttachment(null)}
+      />
+
+      {/* ── Document detail modal ── */}
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="sm:max-w-[680px] max-h-[90vh] p-0">
+          <div className="flex flex-col max-h-[90vh]">
+            {/* ── Header ── */}
+            <div className="px-6 pt-6 pb-4">
+              <DialogHeader className="space-y-0">
+                <div className="flex items-start gap-3">
+                  <div
+                    className={cn(
+                      "flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center",
+                      primaryTypeColor.bg
+                    )}
+                  >
+                    <div
                       className={cn(
-                        "text-xs font-semibold uppercase",
-                        primaryTypeColor.text,
-                        primaryTypeColor.bg,
-                        primaryTypeColor.border
+                        "text-sm font-black uppercase",
+                        primaryTypeColor.text
                       )}
                     >
                       {document.type}
-                    </Badge>
-                    <Badge
-                      className={cn(
-                        "text-xs",
-                        document.status === "published"
-                          ? "bg-green-100 text-green-700 border-green-200 hover:bg-green-100"
-                          : "bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-100"
-                      )}
-                    >
-                      {document.status === "published" ? "Đã xuất bản" : "Nháp"}
-                    </Badge>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <DialogTitle className="text-lg leading-snug">
+                      {document.name}
+                    </DialogTitle>
+                    <div className="flex items-center gap-2 mt-1 flex-wrap">
+                      <Badge
+                        variant="outline"
+                        className={cn(
+                          "text-xs font-semibold uppercase",
+                          primaryTypeColor.text,
+                          primaryTypeColor.bg,
+                          primaryTypeColor.border
+                        )}
+                      >
+                        {document.type}
+                      </Badge>
+                      <Badge
+                        className={cn(
+                          "text-xs",
+                          document.status === "published"
+                            ? "bg-green-100 text-green-700 border-green-200 hover:bg-green-100"
+                            : "bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-100"
+                        )}
+                      >
+                        {document.status === "published"
+                          ? "Đã xuất bản"
+                          : "Nháp"}
+                      </Badge>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </DialogHeader>
+              </DialogHeader>
 
-            {/* ── Metadata ── */}
-            <div className="grid grid-cols-3 gap-2 mt-4">
-              <div className="flex items-center gap-1.5 text-xs">
-                <Hash className="h-3 w-3 text-muted-foreground" />
-                <span className="text-muted-foreground">ID:</span>
-                <span className="font-mono bg-muted px-1 py-0.5 rounded truncate">
-                  {document.id}
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs">
-                <FileText className="h-3 w-3 text-muted-foreground" />
-                <span className="text-muted-foreground">Kích thước:</span>
-                <span className="font-medium">{document.size || "—"}</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs">
-                <Clock className="h-3 w-3 text-muted-foreground" />
-                <span className="text-muted-foreground">Cập nhật:</span>
-                <span className="font-medium">
-                  {document.updatedAt
-                    ? format(new Date(document.updatedAt), "dd/MM/yyyy")
-                    : "—"}
-                </span>
+              {/* ── Metadata ── */}
+              <div className="grid grid-cols-3 gap-2 mt-4">
+                <div className="flex items-center gap-1.5 text-xs">
+                  <Hash className="h-3 w-3 text-muted-foreground" />
+                  <span className="text-muted-foreground">ID:</span>
+                  <span className="font-mono bg-muted px-1 py-0.5 rounded truncate">
+                    {document.id}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs">
+                  <FileText className="h-3 w-3 text-muted-foreground" />
+                  <span className="text-muted-foreground">Kích thước:</span>
+                  <span className="font-medium">{document.size || "—"}</span>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs">
+                  <Clock className="h-3 w-3 text-muted-foreground" />
+                  <span className="text-muted-foreground">Cập nhật:</span>
+                  <span className="font-medium">
+                    {document.updatedAt
+                      ? format(new Date(document.updatedAt), "dd/MM/yyyy")
+                      : "—"}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <Separator />
+            <Separator />
 
-          {/* ── Body: attachments list + preview ── */}
-          <ScrollArea className="flex-1 px-6">
-            <div className="py-4 space-y-4">
-              {/* Attachments header */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Paperclip className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-semibold">Tệp đính kèm</span>
-                  <Badge variant="secondary" className="text-xs">
-                    {attachments.length}
-                  </Badge>
+            {/* ── Body ── */}
+            <ScrollArea className="flex-1 px-6">
+              <div className="py-4 space-y-4">
+                {/* Attachments header */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Paperclip className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm font-semibold">Tệp đính kèm</span>
+                    <Badge variant="secondary" className="text-xs">
+                      {attachments.length}
+                    </Badge>
+                  </div>
+                  {attachments.length > 0 && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 text-xs cursor-pointer"
+                      onClick={() => {
+                        attachments.forEach((att) => {
+                          handleDownload(att.url, att.filename)
+                        })
+                      }}
+                    >
+                      <Download className="h-3.5 w-3.5 mr-1.5" />
+                      Tải tất cả
+                    </Button>
+                  )}
                 </div>
+
+                {/* Attachment list */}
+                {attachments.length === 0 ? (
+                  <div className="flex flex-col items-center gap-2 py-8 text-muted-foreground border border-dashed rounded-lg">
+                    <Paperclip className="h-8 w-8 opacity-30" />
+                    <p className="text-sm">Không có tệp đính kèm</p>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    {attachments.map((att, idx) => (
+                      <AttachmentRow
+                        key={`${att.filename}-${idx}`}
+                        attachment={att}
+                        isActive={
+                          selectedAttachment?.filename === att.filename &&
+                          selectedAttachment?.url === att.url
+                        }
+                        onSelect={() =>
+                          setSelectedAttachment(
+                            selectedAttachment?.filename === att.filename &&
+                              selectedAttachment?.url === att.url
+                              ? null
+                              : att
+                          )
+                        }
+                        onDownload={() =>
+                          handleDownload(att.url, att.filename)
+                        }
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Preview / action area */}
                 {attachments.length > 0 && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="h-7 text-xs cursor-pointer"
-                    onClick={() => {
-                      attachments.forEach((att) => {
-                        handleDownload(att.url, att.filename)
-                      })
-                    }}
-                  >
-                    <Download className="h-3.5 w-3.5 mr-1.5" />
-                    Tải tất cả
-                  </Button>
+                  <>
+                    <Separator />
+                    {selectedAttachment ? (
+                      isImageType(selectedAttachment.filetype) ? (
+                        /* ── Image: open full-screen modal ── */
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Image className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-sm font-semibold">
+                              Xem trước hình ảnh
+                            </span>
+                          </div>
+                          {/* Thumbnail preview */}
+                          <div
+                            className="relative rounded-lg border overflow-hidden bg-muted/20 cursor-pointer group"
+                            onClick={() =>
+                              setImageModalAttachment(selectedAttachment)
+                            }
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={selectedAttachment.url}
+                              alt={selectedAttachment.filename}
+                              className={cn(
+                                "w-full object-contain transition-opacity",
+                                isMockUrl(selectedAttachment.url)
+                                  ? "opacity-30 h-[160px]"
+                                  : "max-h-[200px]"
+                              )}
+                            />
+                            {isMockUrl(selectedAttachment.url) ? (
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <p className="text-xs text-muted-foreground">
+                                  Không khả dụng (Mock)
+                                </p>
+                              </div>
+                            ) : (
+                              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <div className="flex items-center gap-2 text-white text-sm font-medium">
+                                  <ZoomIn className="h-5 w-5" />
+                                  Bấm để xem full-screen
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                          <div className="flex gap-2">
+                            <Button
+                              size="sm"
+                              className="cursor-pointer"
+                              onClick={() =>
+                                setImageModalAttachment(selectedAttachment)
+                              }
+                              disabled={isMockUrl(selectedAttachment.url)}
+                            >
+                              <ZoomIn className="h-4 w-4 mr-2" />
+                              Xem full-screen
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="cursor-pointer"
+                              onClick={() =>
+                                handleDownload(
+                                  selectedAttachment.url,
+                                  selectedAttachment.filename
+                                )
+                              }
+                            >
+                              <Download className="h-4 w-4 mr-2" />
+                              Tải xuống
+                            </Button>
+                          </div>
+                        </div>
+                      ) : (
+                        /* ── PDF / Docx / Xlsx / Pptx: card + open in new tab ── */
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <FileText className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-sm font-semibold">
+                              Xem trước tài liệu
+                            </span>
+                          </div>
+                          <FileActionCard attachment={selectedAttachment} />
+                        </div>
+                      )
+                    ) : (
+                      <div className="flex flex-col items-center gap-2 py-6 text-muted-foreground border border-dashed rounded-lg">
+                        <FileText className="h-6 w-6 opacity-30" />
+                        <p className="text-sm">
+                          Bấm vào một tệp để xem hoặc tải xuống
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
-
-              {/* Attachment list */}
-              {attachments.length === 0 ? (
-                <div className="flex flex-col items-center gap-2 py-8 text-muted-foreground border border-dashed rounded-lg">
-                  <Paperclip className="h-8 w-8 opacity-30" />
-                  <p className="text-sm">Không có tệp đính kèm</p>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  {attachments.map((att, idx) => (
-                    <AttachmentRow
-                      key={`${att.filename}-${idx}`}
-                      attachment={att}
-                      isActive={
-                        selectedAttachment?.filename === att.filename &&
-                        selectedAttachment?.url === att.url
-                      }
-                      onSelect={() =>
-                        setSelectedAttachment(
-                          selectedAttachment?.filename === att.filename &&
-                            selectedAttachment?.url === att.url
-                            ? null
-                            : att
-                        )
-                      }
-                      onOpen={() => openInNewTab(att.url)}
-                      onDownload={() =>
-                        handleDownload(att.url, att.filename)
-                      }
-                    />
-                  ))}
-                </div>
-              )}
-
-              {/* Preview panel */}
-              {attachments.length > 0 && (
-                <>
-                  <Separator />
-                  {selectedAttachment ? (
-                    <PreviewPanel
-                      attachment={selectedAttachment}
-                      onClose={() => setSelectedAttachment(null)}
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center gap-2 py-6 text-muted-foreground border border-dashed rounded-lg">
-                      <Eye className="h-6 w-6 opacity-30" />
-                      <p className="text-sm">
-                        Bấm vào một tệp để xem trước hoặc tải xuống
-                      </p>
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
-          </ScrollArea>
-        </div>
-      </DialogContent>
-    </Dialog>
+            </ScrollArea>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }
