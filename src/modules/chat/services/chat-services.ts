@@ -17,6 +17,7 @@ interface ChatActions {
   setSelectedFriendId: (friendId: string | null) => void
   setSearchQuery: (query: string) => void
   addMessage: (message: ChatMessage) => void
+  syncFriendLastMessage: (friendId: string, message: ChatMessage) => void
 }
 
 export const useChat = create<ChatState & ChatActions>((set, get) => ({
@@ -39,6 +40,18 @@ export const useChat = create<ChatState & ChatActions>((set, get) => ({
       messages: [...state.messages, message],
       friends: state.friends.map((f) =>
         f.id === message.to
+          ? {
+              ...f,
+              lastMessage: { text: message.text, updated: message.updated },
+            }
+          : f
+      ),
+    })),
+
+  syncFriendLastMessage: (friendId, message) =>
+    set((state) => ({
+      friends: state.friends.map((f) =>
+        f.id === friendId
           ? {
               ...f,
               lastMessage: { text: message.text, updated: message.updated },

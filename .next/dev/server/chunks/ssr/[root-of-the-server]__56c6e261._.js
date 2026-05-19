@@ -206,6 +206,15 @@ const useChat = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
                                 updated: message.updated
                             }
                         } : f)
+                })),
+        syncFriendLastMessage: (friendId, message)=>set((state)=>({
+                    friends: state.friends.map((f)=>f.id === friendId ? {
+                            ...f,
+                            lastMessage: {
+                                text: message.text,
+                                updated: message.updated
+                            }
+                        } : f)
                 }))
     }));
 }),
@@ -1815,20 +1824,31 @@ __turbopack_context__.s([
     ()=>sendMessage,
     "subscribeToFriends",
     ()=>subscribeToFriends,
-    "subscribeToMessages",
-    ()=>subscribeToMessages
+    "useMessagesSubscription",
+    ()=>useMessagesSubscription
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$firestore$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/firestore/dist/index.mjs [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/firestore/dist/index.node.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/firebase/client.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/chat/services/chat-services.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/chat/services/chat-mock-data.ts [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
 ;
 ;
-function subscribeToFriends(currentUserId, onNext, onError) {
-    const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "friends"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["where"])("participants", "array-contains", currentUserId), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["orderBy"])("lastMessageAt", "desc"));
+;
+;
+const CURRENT_USER = "user-1";
+function getConversationId(a, b) {
+    return [
+        a,
+        b
+    ].sort().join("--");
+}
+function subscribeToFriends(onFriends) {
+    const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "friends"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["where"])("participants", "array-contains", CURRENT_USER), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["orderBy"])("lastMessageAt", "desc"));
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onSnapshot"])(q, (snapshot)=>{
         const friends = snapshot.docs.map((docSnap)=>{
             const data = docSnap.data();
@@ -1846,57 +1866,76 @@ function subscribeToFriends(currentUserId, onNext, onError) {
             };
         });
         if (friends.length === 0) {
-            onNext(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["friendMockData"]);
+            onFriends(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["friendMockData"]);
         } else {
-            onNext(friends);
+            onFriends(friends);
         }
     }, (err)=>{
-        console.warn("Firestore friends listener error, falling back to mock:", err);
-        onNext(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["friendMockData"]);
+        console.warn("Firestore friends error:", err);
+        onFriends(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["friendMockData"]);
     });
 }
-function subscribeToMessages(currentUserId, friendId, onNext, onError) {
-    const conversationId = [
-        currentUserId,
-        friendId
-    ].sort().join("--");
-    const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "messages"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["where"])("conversationId", "==", conversationId), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["orderBy"])("updated", "asc"));
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onSnapshot"])(q, (snapshot)=>{
-        const messages = snapshot.docs.map((docSnap)=>{
-            const data = docSnap.data();
-            const ts = data.updated instanceof __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Timestamp"] ? data.updated.toDate().toISOString() : data.updated ?? new Date().toISOString();
-            return {
-                id: docSnap.id,
-                text: data.text ?? "",
-                from: data.from ?? "",
-                to: data.to ?? "",
-                updated: ts
-            };
+function useMessagesSubscription(friendId) {
+    const { setMessages, messages } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useChat"])();
+    const unsubRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const loadedRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!friendId) return;
+        // Reset state for new conversation
+        setMessages([]);
+        loadedRef.current = false;
+        const conversationId = getConversationId(CURRENT_USER, friendId);
+        const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "messages"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["where"])("conversationId", "==", conversationId), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["orderBy"])("updated", "asc"));
+        unsubRef.current = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onSnapshot"])(q, (snapshot)=>{
+            const msgs = snapshot.docs.map((docSnap)=>{
+                const data = docSnap.data();
+                const ts = data.updated instanceof __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Timestamp"] ? data.updated.toDate().toISOString() : data.updated ?? new Date().toISOString();
+                return {
+                    id: docSnap.id,
+                    text: data.text ?? "",
+                    from: data.from ?? "",
+                    to: data.to ?? "",
+                    updated: ts
+                };
+            });
+            if (msgs.length === 0 && !loadedRef.current) {
+                // First load: Firestore is empty → use mock data once
+                loadedRef.current = true;
+                setMessages(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["messageMockData"][friendId] ?? []);
+            } else {
+                loadedRef.current = true;
+                setMessages(msgs);
+                // Sync lastMessage into friends list
+                if (msgs.length > 0) {
+                    const latest = msgs[msgs.length - 1];
+                    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useChat"].getState().syncFriendLastMessage(friendId, latest);
+                }
+            }
+        }, (err)=>{
+            console.warn("Firestore messages error:", err);
+            if (!loadedRef.current) {
+                loadedRef.current = true;
+                setMessages(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["messageMockData"][friendId] ?? []);
+            }
         });
-        if (messages.length === 0) {
-            const fallback = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["messageMockData"][friendId] ?? [];
-            onNext(fallback);
-        } else {
-            onNext(messages);
-        }
-    }, (err)=>{
-        console.warn("Firestore messages listener error, falling back to mock:", err);
-        const fallback = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["messageMockData"][friendId] ?? [];
-        onNext(fallback);
-    });
+        return ()=>{
+            unsubRef.current?.();
+            unsubRef.current = null;
+        };
+    }, [
+        friendId,
+        setMessages
+    ]);
 }
-async function sendMessage(currentUserId, friendId, text) {
+async function sendMessage(friendId, text) {
     const batch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["writeBatch"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"]);
-    const conversationId = [
-        currentUserId,
-        friendId
-    ].sort().join("--");
+    const conversationId = getConversationId(CURRENT_USER, friendId);
     const now = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Timestamp"].now();
     const messageRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["doc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "messages"));
     const friendRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "friends", friendId);
     batch.set(messageRef, {
         text,
-        from: currentUserId,
+        from: CURRENT_USER,
         to: friendId,
         conversationId,
         updated: now
@@ -1910,11 +1949,14 @@ async function sendMessage(currentUserId, friendId, text) {
     });
     await batch.commit();
 }
-async function markConversationRead(currentUserId, friendId) {
-    const friendRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "friends", friendId);
-    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["updateDoc"])(friendRef, {
-        unreadCount: 0
-    });
+async function markConversationRead(friendId) {
+    try {
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["updateDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$firebase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "friends", friendId), {
+            unreadCount: 0
+        });
+    } catch  {
+    // Silently ignore — not critical
+    }
 }
 }),
 "[project]/src/modules/chat/components/chat.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -1948,57 +1990,51 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$se
 ;
 ;
 ;
-function Chat({ initialFriends = [] }) {
-    const { friends, messages, selectedFriendId, currentUserId, setFriends, setMessages, setSelectedFriendId } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useChat"])();
+const CURRENT_USER = "user-1";
+function Chat() {
+    const { friends, messages, selectedFriendId, setFriends, setSelectedFriendId, addMessage } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useChat"])();
     const [isSidebarOpen, setIsSidebarOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [unsubMessages, setUnsubMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    // Real-time friends listener
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const unsub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["subscribeToFriends"])(currentUserId, (data)=>setFriends(data), ()=>{});
+        const unsub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["subscribeToFriends"])((data)=>setFriends(data));
         return ()=>unsub();
     }, [
-        currentUserId,
         setFriends
     ]);
+    // Real-time messages listener for selected friend
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessagesSubscription"])(selectedFriendId);
+    // Mark read when selecting a friend
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (!selectedFriendId) return;
-        if (unsubMessages) {
-            unsubMessages();
+        if (selectedFriendId) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["markConversationRead"])(selectedFriendId);
         }
-        const unsub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["subscribeToMessages"])(currentUserId, selectedFriendId, (data)=>setMessages(data), ()=>{});
-        setUnsubMessages(()=>unsub);
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["markConversationRead"])(currentUserId, selectedFriendId);
-        return ()=>unsub();
     }, [
-        selectedFriendId,
-        currentUserId,
-        setMessages
+        selectedFriendId
     ]);
+    // Close sidebar on desktop resize
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleResize = ()=>{
-            if (("TURBOPACK compile-time value", "undefined") !== "undefined" && window.innerWidth >= 1024) //TURBOPACK unreachable
-            ;
+            if (window.innerWidth >= 1024) {
+                setIsSidebarOpen(false);
+            }
         };
-        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
-        ;
-        return ()=>{
-            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
-            ;
-        };
+        window.addEventListener("resize", handleResize);
+        return ()=>window.removeEventListener("resize", handleResize);
     }, []);
     const currentFriend = friends.find((f)=>f.id === selectedFriendId) ?? null;
     const handleSendMessage = async (text)=>{
         if (!selectedFriendId) return;
         try {
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sendMessage"])(currentUserId, selectedFriendId, text);
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sendMessage"])(selectedFriendId, text);
         } catch  {
-            const optimisticMsg = {
+            // Optimistic update if Firestore write fails
+            addMessage({
                 id: `msg-${Date.now()}`,
                 text,
-                from: currentUserId,
+                from: CURRENT_USER,
                 to: selectedFriendId,
                 updated: new Date().toISOString()
-            };
-            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useChat"].getState().addMessage(optimisticMsg);
+            });
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipProvider"], {
@@ -2011,7 +2047,7 @@ function Chat({ initialFriends = [] }) {
                     onClick: ()=>setIsSidebarOpen(false)
                 }, void 0, false, {
                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                    lineNumber: 106,
+                    lineNumber: 83,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2031,7 +2067,7 @@ function Chat({ initialFriends = [] }) {
                                     children: "Messages"
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2043,18 +2079,18 @@ function Chat({ initialFriends = [] }) {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                            lineNumber: 121,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$components$2f$friend$2d$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FriendList"], {
@@ -2066,13 +2102,13 @@ function Chat({ initialFriends = [] }) {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                            lineNumber: 133,
+                            lineNumber: 111,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                    lineNumber: 112,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2090,12 +2126,12 @@ function Chat({ initialFriends = [] }) {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 130,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                    lineNumber: 145,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2104,18 +2140,18 @@ function Chat({ initialFriends = [] }) {
                                         friend: currentFriend
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 133,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                    lineNumber: 153,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                            lineNumber: 144,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2124,13 +2160,13 @@ function Chat({ initialFriends = [] }) {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$components$2f$message$2d$list$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MessageList"], {
                                         messages: messages,
-                                        currentUserId: currentUserId,
+                                        currentUserId: CURRENT_USER,
                                         friendName: currentFriend?.name,
                                         friendAvatar: currentFriend?.avatar,
                                         friendStatus: currentFriend?.status
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 140,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$components$2f$message$2d$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MessageInput"], {
@@ -2138,7 +2174,7 @@ function Chat({ initialFriends = [] }) {
                                         placeholder: `Message ${currentFriend?.name ?? ""}...`
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 147,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -2152,7 +2188,7 @@ function Chat({ initialFriends = [] }) {
                                             children: "Welcome to Chat"
                                         }, void 0, false, {
                                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 155,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2160,40 +2196,40 @@ function Chat({ initialFriends = [] }) {
                                             children: "Select a friend to start messaging"
                                         }, void 0, false, {
                                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 156,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                    lineNumber: 175,
+                                    lineNumber: 154,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/chat/components/chat.tsx",
-                                lineNumber: 174,
+                                lineNumber: 153,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/modules/chat/components/chat.tsx",
-                            lineNumber: 158,
+                            lineNumber: 137,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/modules/chat/components/chat.tsx",
-                    lineNumber: 143,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/modules/chat/components/chat.tsx",
-            lineNumber: 104,
+            lineNumber: 81,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/modules/chat/components/chat.tsx",
-        lineNumber: 103,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }

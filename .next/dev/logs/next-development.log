@@ -637,3 +637,165 @@ Import traces:
 [00:54:23.081] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
 [00:55:01.265] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:57:11.866] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:59:00.337] Browser WARN    Firestore friends listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:59:02.568] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:59:24.932] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:59:26.339] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:59:34.884] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[00:59:35.961] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:00:37.452] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:00:40.572] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:00:44.537] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:00:52.332] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:00:53.391] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:01:00.907] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:01:01.411] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:02:44.414] Browser WARN    Firestore messages listener error, falling back to mock: {"code":"failed-precondition","name":"FirebaseError"}
+[01:03:29.725] Server  LOG     ✓ Compiled in 497ms
+[01:03:30.864] Browser ERROR   ./src/modules/chat/components/chat.tsx:13:1
+Export subscribeToMessages doesn't exist in target module
+  11 | import { MessageInput } from "./message-input"
+  12 | import { useChat } from "@/modules/chat/services/chat-services"
+> 13 | import {
+     | ^^^^^^^^
+> 14 |   subscribeToFriends,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 15 |   subscribeToMessages,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 16 |   sendMessage,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 17 |   markConversationRead,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 18 | } from "@/modules/chat/services/chat-firebase"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import type { Friend, ChatMessage } from "@/modules/chat/services/types/chat-types"
+  20 |
+  21 | interface ChatProps {
+
+The export subscribeToMessages was not found in module [project]/src/modules/chat/services/chat-firebase.ts [app-client] (ecmascript).
+Did you mean to import subscribeToFriends?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/chat/components/chat.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/chat/components/chat.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[01:03:30.864] Browser ERROR   ./src/modules/chat/components/chat.tsx:13:1
+Export subscribeToMessages doesn't exist in target module
+  11 | import { MessageInput } from "./message-input"
+  12 | import { useChat } from "@/modules/chat/services/chat-services"
+> 13 | import {
+     | ^^^^^^^^
+> 14 |   subscribeToFriends,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 15 |   subscribeToMessages,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 16 |   sendMessage,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 17 |   markConversationRead,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 18 | } from "@/modules/chat/services/chat-firebase"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import type { Friend, ChatMessage } from "@/modules/chat/services/types/chat-types"
+  20 |
+  21 | interface ChatProps {
+
+The export subscribeToMessages was not found in module [project]/src/modules/chat/services/chat-firebase.ts [app-ssr] (ecmascript).
+Did you mean to import subscribeToFriends?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/chat/components/chat.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/chat/components/chat.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[01:03:48.330] Browser ERROR   ./src/modules/chat/components/chat.tsx:13:1
+Export subscribeToMessages doesn't exist in target module
+  11 | import { MessageInput } from "./message-input"
+  12 | import { useChat } from "@/modules/chat/services/chat-services"
+> 13 | import {
+     | ^^^^^^^^
+> 14 |   subscribeToFriends,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 15 |   subscribeToMessages,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 16 |   sendMessage,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 17 |   markConversationRead,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 18 | } from "@/modules/chat/services/chat-firebase"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import type { Friend, ChatMessage } from "@/modules/chat/services/types/chat-types"
+  20 |
+  21 | interface ChatProps {
+
+The export subscribeToMessages was not found in module [project]/src/modules/chat/services/chat-firebase.ts [app-client] (ecmascript).
+Did you mean to import subscribeToFriends?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/chat/components/chat.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/chat/components/chat.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[01:03:48.330] Browser ERROR   ./src/modules/chat/components/chat.tsx:13:1
+Export subscribeToMessages doesn't exist in target module
+  11 | import { MessageInput } from "./message-input"
+  12 | import { useChat } from "@/modules/chat/services/chat-services"
+> 13 | import {
+     | ^^^^^^^^
+> 14 |   subscribeToFriends,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 15 |   subscribeToMessages,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 16 |   sendMessage,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 17 |   markConversationRead,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 18 | } from "@/modules/chat/services/chat-firebase"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import type { Friend, ChatMessage } from "@/modules/chat/services/types/chat-types"
+  20 |
+  21 | interface ChatProps {
+
+The export subscribeToMessages was not found in module [project]/src/modules/chat/services/chat-firebase.ts [app-ssr] (ecmascript).
+Did you mean to import subscribeToFriends?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/chat/components/chat.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/chat/components/chat.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/chat/page.tsx [Server Component]
+[01:03:48.994] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:03:48.994] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:04:00.489] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:04:06.689] Server  LOG     ✓ Compiled in 235ms
+[01:04:14.278] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:04:23.553] Browser ERROR   uncaughtError: TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.useChat.getState(...).syncFriendLastMessage is not a function
+[01:04:23.553] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:04:24.519] Browser ERROR   uncaughtError: TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$chat$2f$services$2f$chat$2d$services$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.useChat.getState(...).syncFriendLastMessage is not a function
+[01:04:24.519] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
+[01:04:29.753] Server  LOG     ✓ Compiled in 226ms
+[01:04:29.934] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}

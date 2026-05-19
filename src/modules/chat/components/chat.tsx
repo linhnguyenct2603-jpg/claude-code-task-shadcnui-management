@@ -12,73 +12,50 @@ import { MessageInput } from "./message-input"
 import { useChat } from "@/modules/chat/services/chat-services"
 import {
   subscribeToFriends,
-  subscribeToMessages,
+  useMessagesSubscription,
   sendMessage,
   markConversationRead,
 } from "@/modules/chat/services/chat-firebase"
-import type { Friend, ChatMessage } from "@/modules/chat/services/types/chat-types"
 
-interface ChatProps {
-  initialFriends?: Friend[]
-}
+const CURRENT_USER = "user-1"
 
-export function Chat({ initialFriends = [] }: ChatProps) {
+export function Chat() {
   const {
     friends,
     messages,
     selectedFriendId,
-    currentUserId,
     setFriends,
-    setMessages,
     setSelectedFriendId,
+    addMessage,
   } = useChat()
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [unsubMessages, setUnsubMessages] = useState<(() => void) | null>(null)
 
+  // Real-time friends listener
   useEffect(() => {
-    const unsub = subscribeToFriends(
-      currentUserId,
-      (data) => setFriends(data),
-      () => {}
-    )
+    const unsub = subscribeToFriends((data) => setFriends(data))
     return () => unsub()
-  }, [currentUserId, setFriends])
+  }, [setFriends])
 
+  // Real-time messages listener for selected friend
+  useMessagesSubscription(selectedFriendId)
+
+  // Mark read when selecting a friend
   useEffect(() => {
-    if (!selectedFriendId) return
-
-    if (unsubMessages) {
-      unsubMessages()
+    if (selectedFriendId) {
+      markConversationRead(selectedFriendId)
     }
+  }, [selectedFriendId])
 
-    const unsub = subscribeToMessages(
-      currentUserId,
-      selectedFriendId,
-      (data) => setMessages(data),
-      () => {}
-    )
-    setUnsubMessages(() => unsub)
-
-    markConversationRead(currentUserId, selectedFriendId)
-
-    return () => unsub()
-  }, [selectedFriendId, currentUserId, setMessages])
-
+  // Close sidebar on desktop resize
   useEffect(() => {
     const handleResize = () => {
-      if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1024) {
         setIsSidebarOpen(false)
       }
     }
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize)
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("resize", handleResize)
-      }
-    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const currentFriend = friends.find((f) => f.id === selectedFriendId) ?? null
@@ -86,16 +63,16 @@ export function Chat({ initialFriends = [] }: ChatProps) {
   const handleSendMessage = async (text: string) => {
     if (!selectedFriendId) return
     try {
-      await sendMessage(currentUserId, selectedFriendId, text)
+      await sendMessage(selectedFriendId, text)
     } catch {
-      const optimisticMsg: ChatMessage = {
+      // Optimistic update if Firestore write fails
+      addMessage({
         id: `msg-${Date.now()}`,
         text,
-        from: currentUserId,
+        from: CURRENT_USER,
         to: selectedFriendId,
         updated: new Date().toISOString(),
-      }
-      useChat.getState().addMessage(optimisticMsg)
+      })
     }
   }
 
@@ -109,6 +86,7 @@ export function Chat({ initialFriends = [] }: ChatProps) {
           />
         )}
 
+        {/* Friend List Sidebar */}
         <div
           className={`
             w-100 border-r bg-background flex-shrink-0
@@ -140,6 +118,7 @@ export function Chat({ initialFriends = [] }: ChatProps) {
           />
         </div>
 
+        {/* Chat Panel */}
         <div className="flex-1 flex flex-col min-w-0 bg-background">
           <div className="flex items-center h-16 px-4 border-b bg-background">
             <Button
@@ -160,7 +139,7 @@ export function Chat({ initialFriends = [] }: ChatProps) {
               <>
                 <MessageList
                   messages={messages}
-                  currentUserId={currentUserId}
+                  currentUserId={CURRENT_USER}
                   friendName={currentFriend?.name}
                   friendAvatar={currentFriend?.avatar}
                   friendStatus={currentFriend?.status}
