@@ -16,6 +16,7 @@ import {
   sendMessage,
   markConversationRead,
 } from "@/modules/chat/services/chat-firebase"
+import type { ChatMessage } from "@/modules/chat/services/types/chat-types"
 
 const CURRENT_USER = "user-1"
 
@@ -62,17 +63,22 @@ export function Chat() {
 
   const handleSendMessage = async (text: string) => {
     if (!selectedFriendId) return
+
+    const optimisticMessage: ChatMessage = {
+      id: `msg-${Date.now()}`,
+      text,
+      from: CURRENT_USER,
+      to: selectedFriendId,
+      updated: new Date().toISOString(),
+    }
+
+    // Optimistic update — message appears immediately
+    addMessage(optimisticMessage)
+
     try {
       await sendMessage(selectedFriendId, text)
     } catch {
-      // Optimistic update if Firestore write fails
-      addMessage({
-        id: `msg-${Date.now()}`,
-        text,
-        from: CURRENT_USER,
-        to: selectedFriendId,
-        updated: new Date().toISOString(),
-      })
+      // Firestore failed — message already shown via optimistic update
     }
   }
 

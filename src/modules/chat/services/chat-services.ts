@@ -36,17 +36,22 @@ export const useChat = create<ChatState & ChatActions>((set, get) => ({
   setSearchQuery: (query) => set({ searchQuery: query }),
 
   addMessage: (message) =>
-    set((state) => ({
-      messages: [...state.messages, message],
-      friends: state.friends.map((f) =>
-        f.id === message.to
-          ? {
-              ...f,
-              lastMessage: { text: message.text, updated: message.updated },
-            }
-          : f
-      ),
-    })),
+    set((state) => {
+      // Prevent duplicate messages from re-subscription
+      const exists = state.messages.some((m) => m.id === message.id)
+      if (exists) return state
+      return {
+        messages: [...state.messages, message],
+        friends: state.friends.map((f) =>
+          f.id === message.to
+            ? {
+                ...f,
+                lastMessage: { text: message.text, updated: message.updated },
+              }
+            : f
+        ),
+      }
+    }),
 
   syncFriendLastMessage: (friendId, message) =>
     set((state) => ({
