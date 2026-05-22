@@ -158,6 +158,26 @@ export function buildColumns({ currentUserUid, onUpdate, onDelete, onAttachments
       },
     },
     {
+      accessorKey: "reporter",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Reporter" />
+      ),
+      cell: ({ row }) => {
+        const reporter = row.getValue("reporter") as string | undefined
+        if (!reporter) {
+          return <span className="text-muted-foreground text-sm">—</span>
+        }
+        return (
+          <div className="flex items-center">
+            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">
+              {reporter.charAt(0).toUpperCase()}
+            </div>
+            <span className="ml-2 text-sm">{reporter}</span>
+          </div>
+        )
+      },
+    },
+    {
       accessorKey: "dueDate",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Due Date" />

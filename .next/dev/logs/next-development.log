@@ -120,3 +120,14 @@ This typically indicates that your device does not have a healthy Internet conne
 [01:21:20.161] Server  LOG     ✓ Compiled in 711ms
 [01:21:38.067] Server  LOG     ✓ Compiled in 990ms
 [01:21:44.405] Server  LOG     ✓ Compiled in 233ms
+[01:21:59.742] Server  LOG     ✓ Compiled in 442ms
+[01:22:00.308] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [] [84h7iIade7S8PzgKrBpe57KPYUd2]
+[01:22:09.037] Server  LOG     ✓ Compiled in 923ms
+[01:24:49.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:55.625] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:27:04.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:27:07.289] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:29:05.092] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

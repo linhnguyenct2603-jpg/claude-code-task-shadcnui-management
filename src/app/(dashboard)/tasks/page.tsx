@@ -42,7 +42,7 @@ export default function TaskPage() {
   useEffect(() => {
     const loadTasks = async () => {
       try {
-        const taskList = await getTasks()
+        const taskList = await getTasks(currentUserUid)
         setTasks(taskList)
       } catch (error) {
         console.error("Failed to load tasks:", error)
@@ -52,7 +52,7 @@ export default function TaskPage() {
     }
 
     loadTasks()
-  }, [])
+  }, [currentUserUid])
 
   const handleCreateTask = useCallback(async (newTask: Task) => {
     try {

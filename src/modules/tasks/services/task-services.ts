@@ -8,8 +8,12 @@ import {
 import { taskMockData } from "./task-mock-data"
 import type { Task } from "./types/task-types"
 
-export async function getTasks(): Promise<Task[]> {
-  return getFirestoreCollection<Task>("tasks", taskMockData)
+export async function getTasks(currentUserUid?: string | null): Promise<Task[]> {
+  const tasks = await getFirestoreCollection<Task>("tasks", taskMockData)
+  if (!currentUserUid) return tasks
+  return tasks.filter(
+    (t) => t.createdBy === currentUserUid || t.reporter === currentUserUid
+  )
 }
 
 export async function createTask(task: Task): Promise<string> {
