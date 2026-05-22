@@ -1,15 +1,4 @@
 {
-  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
-  "/(auth)/sign-up/page": "app/(auth)/sign-up/page.js",
-  "/(dashboard)/calendar/page": "app/(dashboard)/calendar/page.js",
-  "/(dashboard)/chart/page": "app/(dashboard)/chart/page.js",
-  "/(dashboard)/chat/page": "app/(dashboard)/chat/page.js",
-  "/(dashboard)/dashboard-3/page": "app/(dashboard)/dashboard-3/page.js",
-  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/(dashboard)/iso-documents/page": "app/(dashboard)/iso-documents/page.js",
-  "/(dashboard)/mock-data/page": "app/(dashboard)/mock-data/page.js",
-  "/(dashboard)/tasks/page": "app/(dashboard)/tasks/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/landing/page": "app/landing/page.js",
-  "/page": "app/page.js"
+  "/(dashboard)/users/page": "app/(dashboard)/users/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

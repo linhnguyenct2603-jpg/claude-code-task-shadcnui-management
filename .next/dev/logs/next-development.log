@@ -1,264 +1,80 @@
-[00:00:04.822] Server  LOG     ✓ Ready in 3.8s
-[00:06:20.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:25.567] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:06:25.567] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:06:25.567] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:08:25.035] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:08:25.035] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:08:29.015] Browser WARN    [Revenue] Firestore realtime error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:29.015] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:08:29.015] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:08:35.309] Browser WARN    Firestore friends error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:39.568] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:41.932] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:43.481] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:43.982] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:08:44.426] Browser WARN    Firestore messages error: {"code":"failed-precondition","name":"FirebaseError"}
-[00:41:42.544] Browser WARN    [Firestore] SDK write failed for tasks. Trying REST fallback. Function setDoc() called with invalid data. Unsupported field value: undefined (found in field createdBy in document tasks/TASK-7224)
-[00:42:39.747] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:42:39.747] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:51:14.392] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:51:14.392] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:52:11.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:52:40.324] Browser WARN    [2026-05-22T04:28:42.073Z]  @firebase/firestore: Firestore (12.12.0): WebChannelConnection RPC 'Listen' stream 0x22de5404 transport errored. Name: undefined Message: undefined
-[00:52:40.324] Browser ERROR   [2026-05-22T04:28:42.075Z]  @firebase/firestore: Firestore (12.12.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=unavailable]: The operation could not be completed
-This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
-[00:55:05.332] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:56:19.475] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:22.466] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:32.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:34.174] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:56:34.905] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:56:34.905] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:56:51.447] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:00.231] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:06.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:09.122] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:58:09.764] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[00:58:09.764] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:00:19.268] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:00:19.268] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:02:03.009] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:02:03.009] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:05:13.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:06:10.898] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:07:48.824] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:01.163] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:08:17.039] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:08:17.039] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:09:35.616] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:11:28.063] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:11:37.041] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:11:37.041] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:15:13.741] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:21:20.161] Server  LOG     ✓ Compiled in 711ms
-[01:21:38.067] Server  LOG     ✓ Compiled in 990ms
-[01:21:44.405] Server  LOG     ✓ Compiled in 233ms
-[01:21:59.742] Server  LOG     ✓ Compiled in 442ms
-[01:22:00.308] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
-
-Previous: %s
-Incoming: %s useEffect [] [84h7iIade7S8PzgKrBpe57KPYUd2]
-[01:22:09.037] Server  LOG     ✓ Compiled in 923ms
-[01:24:49.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:26:55.625] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:27:04.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:27:07.289] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:29:05.092] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:31:37.646] Server  LOG     ✓ Compiled in 743ms
-[01:32:03.410] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:33:04.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:33:40.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:34:55.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:18.403] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:22.398] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:38:28.556] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:38:28.556] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:38:28.795] Server  LOG     ✓ Compiled in 336ms
-[01:38:31.898] Browser LOG     [RLS DEBUG] currentUserUid: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:38:31.898] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:38:31.898] Browser LOG     [RLS DEBUG] filtered count: 2 / 53
-[01:38:58.655] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:38:58.655] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:39:05.613] Browser LOG     [RLS DEBUG] currentUserUid: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:39:05.613] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:39:05.613] Browser LOG     [RLS DEBUG] filtered count: 2 / 53
-[01:39:28.111] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:39:28.111] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:39:31.795] Browser LOG     [RLS DEBUG] currentUserUid: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:39:31.795] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:39:31.796] Browser LOG     [RLS DEBUG] filtered count: 2 / 53
-[01:41:40.344] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:41:40.344] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:41:43.919] Browser LOG     [RLS DEBUG] currentUserUid: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:41:43.919] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:41:43.919] Browser LOG     [RLS DEBUG] filtered count: 2 / 53
-[01:42:29.476] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:42:30.790] Browser LOG     [RLS DEBUG] currentUserUid: 84h7iIade7S8PzgKrBpe57KPYUd2
-[01:42:30.790] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:42:30.790] Browser LOG     [RLS DEBUG] filtered count: 2 / 53
-[01:42:55.703] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:43:01.957] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:43:01.957] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:43:05.286] Browser LOG     [RLS DEBUG] currentUserUid: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:43:05.286] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:43:05.286] Browser LOG     [RLS DEBUG] filtered count: 3 / 53
-[01:45:21.136] Server  LOG     ✓ Compiled in 615ms
-[01:45:34.663] Server  LOG     ✓ Compiled in 282ms
-[01:45:41.395] Server  LOG     ✓ Compiled in 384ms
-[01:45:49.064] Server  LOG     ✓ Compiled in 196ms
-[01:45:57.016] Server  LOG     ✓ Compiled in 253ms
-[01:46:04.556] Server  LOG     ✓ Compiled in 226ms
-[01:46:16.193] Server  LOG     ✓ Compiled in 408ms
-[01:46:21.755] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:46:23.071] Browser LOG     [RLS DEBUG] currentUserUid: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:46:23.071] Browser LOG     [RLS DEBUG] sample task createdBy: 84h7iIade7S8PzgKrBpe57KPYUd2 reporter: K0AxAVIszrhUpV9o9y9iXxoCAjE3
-[01:46:23.071] Browser LOG     [RLS DEBUG] filtered count: 3 / 53
-[01:47:07.742] Server  LOG     ✓ Compiled in 394ms
-[01:48:15.316] Server  LOG     ✓ Compiled in 240ms
-[01:59:39.343] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:59:50.889] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:59:58.510] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[01:59:58.510] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:07.300] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:07.300] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:13.953] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:17.974] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
-[02:00:17.974] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
-       please check the style of container, or the props width(100%) and height(100%),
-       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
-       height and width.
+[00:00:04.752] Server  LOG     ✓ Ready in 3.4s
+[00:00:08.656] Server  LOG     ○ Compiling /users ...
+[00:00:12.151] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.468] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:20.514] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:20.550] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:23.734] Server  LOG     ○ Compiling middleware ...
+[00:00:28.191] Server  LOG     ✓ Compiled in 7.8s
+[00:00:28.866] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:29.586] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:29.794] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:30.045] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:30.227] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:30.295] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:00:30.605] Browser ERROR   uncaughtError: Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:01:26.726] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:26.809] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:26.826] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:26.863] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:26.876] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:26.888] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.533] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.547] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.596] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.766] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.779] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:01:42.794] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:02:41.553] Server  LOG     ✓ Compiled in 2.5s
+[00:02:41.665] Server  ERROR   ⨯ Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:02:42.349] Browser ERROR   uncaughtError: Error: The edge runtime does not support Node.js 'process' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+[00:03:10.606] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:10.663] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:10.722] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.830] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.869] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.917] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.933] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.946] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.958] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.975] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:21.999] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:22.009] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.646] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.671] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.732] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.800] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.808] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:03:35.823] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:14.935] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:14.950] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:15.057] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:15.719] Server  LOG     ✓ Compiled in 774ms
+[00:04:25.724] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:25.733] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:25.789] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:04:26.362] Server  LOG     ✓ Compiled in 601ms
+[00:05:04.325] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:04.355] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:04.450] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:15.046] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:15.055] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:15.135] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:31.958] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:31.984] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.054] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.195] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.283] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.304] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.325] Server  ERROR   Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.345] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:32.358] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src\middleware.ts" and proxy file "./src\proxy.ts" are detected. Please use "./src\proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy

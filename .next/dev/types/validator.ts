@@ -353,6 +353,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/seed-rbac/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/seed-rbac">> = Specific
+  const handler = {} as typeof import("../../../src/app/seed-rbac/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/api/projects/migrate/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/projects/migrate">> = Specific

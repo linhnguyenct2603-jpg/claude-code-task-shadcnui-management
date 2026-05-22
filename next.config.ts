@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
   },
+  serverExternalPackages: ["firebase-admin"],
   turbopack: {},
 
   // Image optimization

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "administrator",
+    "name": "Administrator",
+    "slug": "administrator",
+    "description": "Full system access — all menus and features.",
+    "permissions": [
+      "dashboard",
+      "dashboard_2",
+      "dashboard_3",
+      "chart",
+      "mail",
+      "tasks",
+      "chat",
+      "calendar",
+      "users",
+      "iso_documents",
+      "quiz",
+      "quiz_monitor",
+      "settings",
+      "faqs",
+      "pricing",
+      "mock_data",
+      "landing",
+      "errors",
+      "customer_care",
+      "projects"
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "director",
+    "name": "Director",
+    "slug": "director",
+    "description": "Access to dashboards and ISO documents only.",
+    "permissions": [
+      "dashboard",
+      "dashboard_2",
+      "dashboard_3",
+      "chart",
+      "iso_documents"
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "accounting",
+    "name": "Accounting",
+    "slug": "accounting",
+    "description": "Access to Dashboard 3 (marketing metrics) and ISO documents.",
+    "permissions": [
+      "dashboard_3",
+      "chart",
+      "iso_documents"
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "staff",
+    "name": "Staff",
+    "slug": "staff",
+    "description": "Access to ISO documents only.",
+    "permissions": [
+      "iso_documents"
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "customer",
+    "name": "Customer",
+    "slug": "customer",
+    "description": "Access to chart/revenue dashboard only.",
+    "permissions": [
+      "chart"
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  }
+]

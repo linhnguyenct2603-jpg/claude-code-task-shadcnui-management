@@ -1,30 +1,8 @@
 "use client"
 
 import * as React from "react"
-import {
-  LayoutPanelLeft,
-  LayoutDashboard,
-  Megaphone,
-  Database,
-  BookMarked,
-  Monitor,
-  Mail,
-  CheckSquare,
-  MessageCircle,
-  Calendar,
-  Shield,
-  AlertTriangle,
-  Settings,
-  HelpCircle,
-  CreditCard,
-  LayoutTemplate,
-  Users,
-  BarChart3,
-  FileText,
-} from "lucide-react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
-
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -36,191 +14,25 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
-const data = {
-  user: {
-    name: "Claude Code",
-    email: "store@example.com",
-    avatar: "",
-  },
-  navGroups: [
-    {
-      label: "Dashboards",
-      items: [
-        {
-          title: "Dashboard 1",
-          url: "/dashboard",
-          icon: LayoutDashboard,
-        },
-        {
-          title: "Dashboard 2",
-          url: "/dashboard-2",
-          icon: LayoutPanelLeft,
-        },
-        {
-          title: "Dashboard 3",
-          url: "/dashboard-3",
-          icon: Megaphone,
-        },
-        {
-          title: "Biểu đồ doanh thu",
-          url: "/chart",
-          icon: BarChart3,
-        },
-      ],
-    },
-    {
-      label: "Apps",
-      items: [
-        {
-          title: "Mail",
-          url: "/mail",
-          icon: Mail,
-        },
-        {
-          title: "Tasks",
-          url: "/tasks",
-          icon: CheckSquare,
-        },
-        {
-          title: "Chat",
-          url: "/chat",
-          icon: MessageCircle,
-        },
-        {
-          title: "Calendar",
-          url: "/calendar",
-          icon: Calendar,
-        },
-        {
-          title: "Users",
-          url: "/users",
-          icon: Users,
-        },
-        {
-          title: "Biểu mẫu ISO",
-          url: "/iso-documents",
-          icon: FileText,
-        },
-        {
-          title: "Quiz",
-          url: "/quiz",
-          icon: BookMarked,
-        },
-        {
-          title: "Quiz Monitor",
-          url: "/quiz-monitor",
-          icon: Monitor,
-        },
-      ],
-    },
-    {
-      label: "Pages",
-      items: [
-        {
-          title: "Landing",
-          url: "/landing",
-          target: "_blank",
-          icon: LayoutTemplate,
-        },
-        {
-          title: "Auth Pages",
-          url: "#",
-          icon: Shield,
-          items: [
-            {
-              title: "Sign In",
-              url: "/sign-in",
-            },
-            {
-              title: "Sign Up",
-              url: "/sign-up",
-            },
-            {
-              title: "Forgot Password",
-              url: "/forgot-password",
-            },
-          ],
-        },
-        {
-          title: "Errors",
-          url: "#",
-          icon: AlertTriangle,
-          items: [
-            {
-              title: "Unauthorized",
-              url: "/errors/unauthorized",
-            },
-            {
-              title: "Forbidden",
-              url: "/errors/forbidden",
-            },
-            {
-              title: "Not Found",
-              url: "/errors/not-found",
-            },
-            {
-              title: "Internal Server Error",
-              url: "/errors/internal-server-error",
-            },
-            {
-              title: "Under Maintenance",
-              url: "/errors/under-maintenance",
-            },
-          ],
-        },
-        {
-          title: "Settings",
-          url: "#",
-          icon: Settings,
-          items: [
-            {
-              title: "User Settings",
-              url: "/settings/user",
-            },
-            {
-              title: "Account Settings",
-              url: "/settings/account",
-            },
-            {
-              title: "Plans & Billing",
-              url: "/settings/billing",
-            },
-            {
-              title: "Appearance",
-              url: "/settings/appearance",
-            },
-            {
-              title: "Notifications",
-              url: "/settings/notifications",
-            },
-            {
-              title: "Connections",
-              url: "/settings/connections",
-            },
-          ],
-        },
-        {
-          title: "FAQs",
-          url: "/faqs",
-          icon: HelpCircle,
-        },
-        {
-          title: "Pricing",
-          url: "/pricing",
-          icon: CreditCard,
-        },
-        {
-          title: "Mock Data",
-          url: "/mock-data",
-          icon: Database,
-        },
-      ],
-    },
-  ],
-}
+import { useAuth } from "@/contexts/auth-context"
+import { filterNavGroups, sidebarMenuConfig } from "@/modules/auth/services/sidebar-menu-config"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user, role, hasPermission } = useAuth()
+
+  const navGroups = React.useMemo(
+    () => filterNavGroups(sidebarMenuConfig, hasPermission),
+    [hasPermission]
+  )
+
+  const displayUser = user
+    ? {
+        name: user.displayName || user.email || "User",
+        email: user.email || "",
+        avatar: "",
+      }
+    : null
+
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -232,8 +44,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Logo size={24} className="text-current" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Claude Code</span>
-                  <span className="truncate text-xs">Admin Dashboard</span>
+                  <span className="truncate font-medium">
+                    {role?.name || "Dashboard"}
+                  </span>
+                  <span className="truncate text-xs">
+                    {user?.displayName || "RBAC Dashboard"}
+                  </span>
                 </div>
               </Link>
             </SidebarMenuButton>
@@ -241,12 +57,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        {data.navGroups.map((group) => (
+        {navGroups.map((group) => (
           <NavMain key={group.label} label={group.label} items={group.items} />
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {displayUser && <NavUser user={displayUser} />}
       </SidebarFooter>
     </Sidebar>
   )

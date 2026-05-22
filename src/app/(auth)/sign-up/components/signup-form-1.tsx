@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/form"
 import { Checkbox } from "@/components/ui/checkbox"
 import { signUpWithEmailPassword, signUpWithGoogle, getFirebaseAuthErrorMessage } from "@/lib/firebase/auth"
+import { setSessionCookie } from "@/lib/firebase/actions"
 
 const signupFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -67,7 +68,9 @@ export function SignupForm1({
     const displayName = `${data.firstName} ${data.lastName}`.trim()
 
     try {
-      await signUpWithEmailPassword(data.email, data.password, displayName)
+      const result = await signUpWithEmailPassword(data.email, data.password, displayName)
+      const idToken = await result.user.getIdToken()
+      await setSessionCookie(idToken)
       router.push("/dashboard")
     } catch (error) {
       setGlobalError(getFirebaseAuthErrorMessage(error, "signup"))
@@ -80,7 +83,9 @@ export function SignupForm1({
     setIsLoading(true)
     setGlobalError(null)
     try {
-      await signUpWithGoogle()
+      const result = await signUpWithGoogle()
+      const idToken = await result.user.getIdToken()
+      await setSessionCookie(idToken)
       router.push("/dashboard")
     } catch (error) {
       setGlobalError(getFirebaseAuthErrorMessage(error, "signup"))

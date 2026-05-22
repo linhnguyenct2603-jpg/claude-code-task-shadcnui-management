@@ -5,6 +5,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut as firebaseSignOut,
   updateProfile,
 } from "firebase/auth"
 
@@ -36,6 +37,10 @@ export async function signUpWithGoogle() {
 
 export async function resetPassword(email: string) {
   return sendPasswordResetEmail(auth, email)
+}
+
+export async function signOut() {
+  return firebaseSignOut(auth)
 }
 
 export function getFirebaseAuthErrorMessage(error: unknown, mode: "signin" | "signup" = "signin") {

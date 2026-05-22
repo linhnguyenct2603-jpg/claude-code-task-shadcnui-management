@@ -8,6 +8,7 @@ import { seedDashboardMockData } from "@/modules/dashboard/services/mock-data-se
 import { seedRevenuesMockData } from "@/modules/dashboard/services/revenue-mock-data-services"
 import { seedDashboard2MockData } from "@/modules/dashboard-2/services/mock-data-services"
 import { seedDashboard3MockData } from "@/modules/dashboard-3/services/mock-data-services"
+import { seedAuthMockData } from "@/modules/auth/services/mock-data-services"
 import { seedFaqsMockData } from "@/modules/faqs/services/mock-data-services"
 import { seedMailMockData } from "@/modules/mail/services/mock-data-services"
 import { seedPricingMockData } from "@/modules/pricing/services/mock-data-services"
@@ -18,6 +19,7 @@ import { seedTasksMockData } from "@/modules/tasks/services/mock-data-services"
 import { seedUsersMockData } from "@/modules/users/services/mock-data-services"
 
 export const mockDataFeatures = [
+  { id: "auth", label: "Auth & Roles", seed: seedAuthMockData },
   { id: "tasks", label: "Tasks", seed: seedTasksMockData },
   { id: "users", label: "Users", seed: seedUsersMockData },
   { id: "chat", label: "Chat", seed: seedChatMockData },

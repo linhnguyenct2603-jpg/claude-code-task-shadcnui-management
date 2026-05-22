@@ -177,6 +177,7 @@
     --color-blue-700: #1447e6;
     --color-blue-800: #193cb8;
     --color-blue-900: #1c398e;
+    --color-blue-950: #162456;
     --color-violet-50: #f5f3ff;
     --color-violet-400: #a685ff;
     --color-violet-500: #8d54ff;
@@ -372,6 +373,7 @@
       --color-blue-700: lab(36.9089% 35.0961 -85.6872);
       --color-blue-800: lab(30.2514% 27.7854 -70.2699);
       --color-blue-900: lab(26.1542% 15.7545 -51.5504);
+      --color-blue-950: lab(15.6723% 8.86233 -32.2945);
       --color-violet-50: lab(96.2416% 2.28846 -5.51655);
       --color-violet-400: lab(62.8239% 34.9159 -60.0512);
       --color-violet-500: lab(49.9355% 55.1777 -81.8963);
@@ -742,6 +744,10 @@
 
   .relative {
     position: relative;
+  }
+
+  .static {
+    position: static;
   }
 
   .sticky {
@@ -2275,6 +2281,14 @@
 
   .scroll-py-1 {
     scroll-padding-block: calc(var(--spacing) * 1);
+  }
+
+  .list-inside {
+    list-style-position: inside;
+  }
+
+  .list-decimal {
+    list-style-type: decimal;
   }
 
   .list-none {
@@ -7678,6 +7692,10 @@
     rotate: none;
   }
 
+  .dark\:border-blue-900:is(.dark *) {
+    border-color: var(--color-blue-900);
+  }
+
   .dark\:border-green-800:is(.dark *) {
     border-color: var(--color-green-800);
   }
@@ -7735,6 +7753,16 @@
   @supports (color: color-mix(in lab, red, red)) {
     .dark\:bg-blue-900\/20:is(.dark *) {
       background-color: color-mix(in oklab, var(--color-blue-900) 20%, transparent);
+    }
+  }
+
+  .dark\:bg-blue-950\/20:is(.dark *) {
+    background-color: #16245633;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-blue-950\/20:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-blue-950) 20%, transparent);
     }
   }
 

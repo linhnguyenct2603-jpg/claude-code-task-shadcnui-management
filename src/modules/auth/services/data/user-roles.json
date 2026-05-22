@@ -1,0 +1,37 @@
+[
+  {
+    "id": "uid-admin-placeholder",
+    "uid": "uid-admin-placeholder",
+    "roleSlug": "administrator",
+    "assignedAt": "2024-01-01T00:00:00Z",
+    "assignedBy": null
+  },
+  {
+    "id": "uid-director-placeholder",
+    "uid": "uid-director-placeholder",
+    "roleSlug": "director",
+    "assignedAt": "2024-01-01T00:00:00Z",
+    "assignedBy": null
+  },
+  {
+    "id": "uid-accounting-placeholder",
+    "uid": "uid-accounting-placeholder",
+    "roleSlug": "accounting",
+    "assignedAt": "2024-01-01T00:00:00Z",
+    "assignedBy": null
+  },
+  {
+    "id": "uid-staff-placeholder",
+    "uid": "uid-staff-placeholder",
+    "roleSlug": "staff",
+    "assignedAt": "2024-01-01T00:00:00Z",
+    "assignedBy": null
+  },
+  {
+    "id": "uid-customer-placeholder",
+    "uid": "uid-customer-placeholder",
+    "roleSlug": "customer",
+    "assignedAt": "2024-01-01T00:00:00Z",
+    "assignedBy": null
+  }
+]

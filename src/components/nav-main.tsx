@@ -30,10 +30,13 @@ export function NavMain({
     url: string
     icon?: LucideIcon
     isActive?: boolean
+    target?: "_blank"
     items?: {
       title: string
       url: string
+      icon?: LucideIcon
       isActive?: boolean
+      target?: "_blank"
     }[]
   }[]
 }) {
@@ -73,9 +76,10 @@ export function NavMain({
                           <SidebarMenuSubButton asChild className="cursor-pointer" isActive={pathname === subItem.url}>
                             <Link
                               href={subItem.url}
-                              target={(item.title === "Auth Pages" || item.title === "Errors") ? "_blank" : undefined}
-                              rel={(item.title === "Auth Pages" || item.title === "Errors") ? "noopener noreferrer" : undefined}
+                              target={subItem.target || ((item.title === "Auth Pages" || item.title === "Errors") ? "_blank" : undefined)}
+                              rel={subItem.target || ((item.title === "Auth Pages" || item.title === "Errors") ? "noopener noreferrer" : undefined)}
                             >
+                              {subItem.icon && <subItem.icon />}
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>

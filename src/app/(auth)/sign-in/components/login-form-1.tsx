@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
@@ -10,6 +10,7 @@ import {
   signInWithEmailPassword,
   signInWithGoogle,
 } from "@/lib/firebase/auth"
+import { setSessionCookie } from "@/lib/firebase/actions"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import {
@@ -41,6 +42,7 @@ export function LoginForm1({
   ...props
 }: React.ComponentProps<"div">) {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false)
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
@@ -53,8 +55,11 @@ export function LoginForm1({
   async function onSubmit(values: LoginFormValues) {
     try {
       form.clearErrors("root")
-      await signInWithEmailPassword(values.email, values.password)
-      router.push("/dashboard")
+      const result = await signInWithEmailPassword(values.email, values.password)
+      const idToken = await result.user.getIdToken()
+      await setSessionCookie(idToken)
+      const redirectTo = searchParams.get("redirect") || "/dashboard"
+      router.push(redirectTo)
       router.refresh()
     } catch (error) {
       form.setError("root", {
@@ -66,8 +71,11 @@ export function LoginForm1({
   async function handleGoogleSignIn() {
     setIsLoadingGoogle(true)
     try {
-      await signInWithGoogle()
-      router.push("/dashboard")
+      const result = await signInWithGoogle()
+      const idToken = await result.user.getIdToken()
+      await setSessionCookie(idToken)
+      const redirectTo = searchParams.get("redirect") || "/dashboard"
+      router.push(redirectTo)
       router.refresh()
     } catch (error) {
       form.setError("root", {
