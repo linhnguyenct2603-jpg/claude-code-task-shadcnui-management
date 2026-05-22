@@ -1,5 +1,36 @@
 {
-  "node": {},
+  "node": {
+    "4059c4f6a71239d7bf16629d2a07e94676da8f8647": {
+      "workers": {
+        "app/(auth)/sign-in/page": {
+          "moduleId": "[project]/.next-internal/server/app/(auth)/sign-in/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/firebase/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "setSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(auth)/sign-in/page": "action-browser"
+      },
+      "filename": "src/lib/firebase/actions.ts",
+      "exportedName": "setSessionCookie"
+    },
+    "00596ec01f5bd0b9f2e36a38fd1643fa94567a334d": {
+      "workers": {
+        "app/(dashboard)/dashboard/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/firebase/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/dashboard/page": "action-browser"
+      },
+      "filename": "src/lib/firebase/actions.ts",
+      "exportedName": "clearSessionCookie"
+    }
+  },
   "edge": {},
   "encryptionKey": "SWcRhrv7yE5ZKR+ec9M9dq5Ug4KksYqG7cfTcPXLqQ8="
 }
