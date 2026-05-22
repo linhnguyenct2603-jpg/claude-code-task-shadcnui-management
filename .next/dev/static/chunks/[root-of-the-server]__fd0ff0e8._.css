@@ -7780,6 +7780,10 @@
     }
   }
 
+  .dark\:bg-green-950:is(.dark *) {
+    background-color: var(--color-green-950);
+  }
+
   .dark\:bg-green-950\/20:is(.dark *) {
     background-color: #032e1533;
   }

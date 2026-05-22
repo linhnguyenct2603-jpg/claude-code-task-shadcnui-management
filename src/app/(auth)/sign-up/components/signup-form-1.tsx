@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Checkbox } from "@/components/ui/checkbox"
-import { signUpWithEmailPassword, getFirebaseAuthErrorMessage } from "@/lib/firebase/auth"
+import { signUpWithEmailPassword, signUpWithGoogle, getFirebaseAuthErrorMessage } from "@/lib/firebase/auth"
 
 const signupFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -68,6 +68,19 @@ export function SignupForm1({
 
     try {
       await signUpWithEmailPassword(data.email, data.password, displayName)
+      router.push("/dashboard")
+    } catch (error) {
+      setGlobalError(getFirebaseAuthErrorMessage(error, "signup"))
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  async function handleGoogleSignUp() {
+    setIsLoading(true)
+    setGlobalError(null)
+    try {
+      await signUpWithGoogle()
       router.push("/dashboard")
     } catch (error) {
       setGlobalError(getFirebaseAuthErrorMessage(error, "signup"))
@@ -196,6 +209,7 @@ export function SignupForm1({
                     variant="outline"
                     className="w-full cursor-pointer"
                     type="button"
+                    onClick={handleGoogleSignUp}
                     disabled={isLoading}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -204,7 +218,7 @@ export function SignupForm1({
                         fill="currentColor"
                       />
                     </svg>
-                    Sign up with Google
+                    {isLoading ? "Signing up..." : "Sign up with Google"}
                   </Button>
                 </div>
                 <div className="text-center text-sm">
