@@ -52,6 +52,7 @@ type EditTaskData = z.infer<typeof editTaskSchema>
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>
+  currentUserUid: string | null
   onUpdate: (taskId: string, data: Partial<Task>) => Promise<void>
   onDelete: (taskId: string) => Promise<void>
   onAttachments: (taskId: string, taskTitle: string) => void
@@ -59,11 +60,13 @@ interface DataTableRowActionsProps<TData> {
 
 export function DataTableRowActions<TData>({
   row,
+  currentUserUid,
   onUpdate,
   onDelete,
   onAttachments,
 }: DataTableRowActionsProps<TData>) {
   const task = row.original as Task
+  const canEdit = currentUserUid !== null && task.createdBy === currentUserUid
 
   const [editOpen, setEditOpen] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
@@ -152,10 +155,15 @@ export function DataTableRowActions<TData>({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
-          <DropdownMenuItem className="cursor-pointer" onClick={() => handleEditOpenChange(true)}>
-            <Pencil className="mr-2 h-4 w-4" />
-            Edit Task
-          </DropdownMenuItem>
+          {canEdit && (
+            <>
+              <DropdownMenuItem className="cursor-pointer" onClick={() => handleEditOpenChange(true)}>
+                <Pencil className="mr-2 h-4 w-4" />
+                Edit Task
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+            </>
+          )}
           <DropdownMenuItem
             className="cursor-pointer"
             onClick={() => onAttachments(task.id, task.title)}
@@ -163,15 +171,19 @@ export function DataTableRowActions<TData>({
             <Paperclip className="mr-2 h-4 w-4" />
             Attachments
           </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem
-            className="cursor-pointer text-destructive focus:text-destructive"
-            onClick={() => setDeleteOpen(true)}
-          >
-            <Trash2 className="mr-2 h-4 w-4" />
-            Delete
-            <DropdownMenuShortcut className="text-destructive">⌘⌫</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {canEdit && (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className="cursor-pointer text-destructive focus:text-destructive"
+                onClick={() => setDeleteOpen(true)}
+              >
+                <Trash2 className="mr-2 h-4 w-4" />
+                Delete
+                <DropdownMenuShortcut className="text-destructive">⌘⌫</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
 

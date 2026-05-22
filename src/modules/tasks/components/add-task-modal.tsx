@@ -46,9 +46,10 @@ type TaskFormData = z.infer<typeof taskFormSchema>
 interface AddTaskModalProps {
   onAddTask?: (task: Task) => void
   trigger?: React.ReactNode
+  currentUserUid?: string | null
 }
 
-export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
+export function AddTaskModal({ onAddTask, trigger, currentUserUid }: AddTaskModalProps) {
   const [open, setOpen] = useState(false)
   const [formData, setFormData] = useState<TaskFormData>({
     id: "",
@@ -100,6 +101,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
         tags: validatedData.tags as Task["tags"],
         createdAt: now,
         updatedAt: now,
+        createdBy: currentUserUid ?? undefined,
       }
 
       onAddTask?.(newTask)

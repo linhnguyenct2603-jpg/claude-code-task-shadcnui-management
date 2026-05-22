@@ -12,12 +12,13 @@ import { DataTableColumnHeader } from "./data-table-column-header"
 import { DataTableRowActions } from "./data-table-row-actions"
 
 export interface BuildColumnsProps {
+  currentUserUid: string | null
   onUpdate: (taskId: string, data: Partial<Task>) => Promise<void>
   onDelete: (taskId: string) => Promise<void>
   onAttachments: (taskId: string, taskTitle: string) => void
 }
 
-export function buildColumns({ onUpdate, onDelete, onAttachments }: BuildColumnsProps): ColumnDef<Task>[] {
+export function buildColumns({ currentUserUid, onUpdate, onDelete, onAttachments }: BuildColumnsProps): ColumnDef<Task>[] {
   return [
     {
       id: "select",
@@ -210,6 +211,7 @@ export function buildColumns({ onUpdate, onDelete, onAttachments }: BuildColumns
       cell: ({ row }) => (
         <DataTableRowActions
           row={row}
+          currentUserUid={currentUserUid}
           onUpdate={onUpdate}
           onDelete={onDelete}
           onAttachments={onAttachments}

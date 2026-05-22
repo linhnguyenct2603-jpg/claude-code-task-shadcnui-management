@@ -1,11 +1,13 @@
 "use client"
 
+import { onAuthStateChanged } from "firebase/auth"
 import { useCallback, useEffect, useState } from "react"
 import { ArrowUp, BarChart3, CheckCircle2, Clock, LayoutGrid, ListTodo } from "lucide-react"
 import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { auth } from "@/lib/firebase/client"
 import { buildColumns } from "@/modules/tasks/components/columns"
 import { DataTable } from "@/modules/tasks/components/data-table"
 import { KanbanBoard } from "@/modules/tasks/components/kanban-board"
@@ -23,11 +25,19 @@ export default function TaskPage() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [loading, setLoading] = useState(true)
   const [view, setView] = useState<"list" | "kanban">("list")
+  const [currentUserUid, setCurrentUserUid] = useState<string | null>(null)
   const [attachmentsDialog, setAttachmentsDialog] = useState<{
     open: boolean
     taskId: string
     taskTitle: string
   }>({ open: false, taskId: "", taskTitle: "" })
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUserUid(user?.uid ?? null)
+    })
+    return () => unsubscribe()
+  }, [])
 
   useEffect(() => {
     const loadTasks = async () => {
@@ -77,6 +87,7 @@ export default function TaskPage() {
   }, [])
 
   const columns = buildColumns({
+    currentUserUid,
     onUpdate: handleUpdateTask,
     onDelete: handleDeleteTask,
     onAttachments: (taskId, taskTitle) => {
@@ -260,6 +271,7 @@ export default function TaskPage() {
                 data={tasks}
                 columns={columns}
                 onCreateTask={handleCreateTask}
+                currentUserUid={currentUserUid}
               />
             </CardContent>
           </Card>

@@ -31,6 +31,8 @@ export const taskSchema = z.object({
   tags: z.array(tagEnum).optional(),
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
+  createdBy: z.string().optional(),
+  reporter: z.string().optional(),
 })
 
 export type Task = z.infer<typeof taskSchema>

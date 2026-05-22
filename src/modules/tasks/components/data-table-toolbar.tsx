@@ -21,11 +21,13 @@ import type { Task } from "@/modules/tasks/services/types/task-types"
 interface DataTableToolbarProps<TData> {
   table: Table<TData>
   onCreateTask?: (task: Task) => void
+  currentUserUid?: string | null
 }
 
 export function DataTableToolbar<TData>({
   table,
   onCreateTask,
+  currentUserUid,
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0
 
@@ -166,7 +168,7 @@ export function DataTableToolbar<TData>({
         </div>
         <div className="flex items-center space-x-2">
           <DataTableViewOptions table={table} />
-          <AddTaskModal onAddTask={onCreateTask} />
+          <AddTaskModal onAddTask={onCreateTask} currentUserUid={currentUserUid} />
         </div>
       </div>
     </div>

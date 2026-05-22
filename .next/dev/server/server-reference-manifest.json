@@ -1,5 +1,21 @@
 {
-  "node": {},
+  "node": {
+    "4072b1f1b2b367314f1296f6ce8da040264f5fc3a5": {
+      "workers": {
+        "app/(dashboard)/mock-data/page": {
+          "moduleId": "[project]/.next-internal/server/app/(dashboard)/mock-data/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/(dashboard)/mock-data/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/(dashboard)/mock-data/page.tsx"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/mock-data/page": "rsc"
+      },
+      "filename": "src/app/(dashboard)/mock-data/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    }
+  },
   "edge": {},
   "encryptionKey": "SWcRhrv7yE5ZKR+ec9M9dq5Ug4KksYqG7cfTcPXLqQ8="
 }

@@ -7,9 +7,14 @@
     "assignee": "user-001",
     "dueDate": "2026-06-01",
     "description": "Integrate OAuth 2.0 authentication with Google, GitHub, and Microsoft providers",
-    "tags": ["backend", "security"],
+    "tags": [
+      "backend",
+      "security"
+    ],
     "createdAt": "2026-04-01T08:00:00Z",
-    "updatedAt": "2026-05-10T14:30:00Z"
+    "updatedAt": "2026-05-10T14:30:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1002",
@@ -19,9 +24,13 @@
     "assignee": "user-002",
     "dueDate": "2026-05-20",
     "description": "Investigate and fix memory leak in dashboard components",
-    "tags": ["Bug"],
+    "tags": [
+      "Bug"
+    ],
     "createdAt": "2026-04-15T09:00:00Z",
-    "updatedAt": "2026-05-14T11:00:00Z"
+    "updatedAt": "2026-05-14T11:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1003",
@@ -31,9 +40,13 @@
     "assignee": "user-003",
     "dueDate": "2026-06-15",
     "description": "Document all v2 API endpoints with request/response examples",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-04-20T10:00:00Z",
-    "updatedAt": "2026-04-20T10:00:00Z"
+    "updatedAt": "2026-04-20T10:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1004",
@@ -43,9 +56,14 @@
     "assignee": "user-001",
     "dueDate": "2026-05-01",
     "description": "Implement dark mode toggle with system preference detection",
-    "tags": ["ui", "Feature"],
+    "tags": [
+      "ui",
+      "Feature"
+    ],
     "createdAt": "2026-03-10T08:30:00Z",
-    "updatedAt": "2026-04-30T16:00:00Z"
+    "updatedAt": "2026-04-30T16:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1005",
@@ -55,9 +73,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-18",
     "description": "Fix redirect logic after successful OAuth and email/password login",
-    "tags": ["Bug", "backend"],
+    "tags": [
+      "Bug",
+      "backend"
+    ],
     "createdAt": "2026-05-05T11:00:00Z",
-    "updatedAt": "2026-05-13T09:00:00Z"
+    "updatedAt": "2026-05-13T09:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1006",
@@ -67,9 +90,14 @@
     "assignee": "user-004",
     "dueDate": "2026-07-01",
     "description": "Design and implement interactive onboarding flow for new users",
-    "tags": ["Feature", "ui"],
+    "tags": [
+      "Feature",
+      "ui"
+    ],
     "createdAt": "2026-04-25T14:00:00Z",
-    "updatedAt": "2026-04-25T14:00:00Z"
+    "updatedAt": "2026-04-25T14:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1007",
@@ -79,9 +107,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-10",
     "description": "Profile and optimize slow queries on the dashboard page",
-    "tags": ["performance", "backend"],
+    "tags": [
+      "performance",
+      "backend"
+    ],
     "createdAt": "2026-04-28T09:30:00Z",
-    "updatedAt": "2026-04-28T09:30:00Z"
+    "updatedAt": "2026-04-28T09:30:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1008",
@@ -91,9 +124,13 @@
     "assignee": "user-001",
     "dueDate": "2026-07-15",
     "description": "Clean up notification service architecture and add unit tests",
-    "tags": ["refactor"],
+    "tags": [
+      "refactor"
+    ],
     "createdAt": "2026-05-01T10:00:00Z",
-    "updatedAt": "2026-05-01T10:00:00Z"
+    "updatedAt": "2026-05-01T10:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1009",
@@ -103,9 +140,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-22",
     "description": "Image upload fails on iOS Safari and Android Chrome browsers",
-    "tags": ["Bug", "ui"],
+    "tags": [
+      "Bug",
+      "ui"
+    ],
     "createdAt": "2026-05-08T13:00:00Z",
-    "updatedAt": "2026-05-12T15:00:00Z"
+    "updatedAt": "2026-05-12T15:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1010",
@@ -115,9 +157,15 @@
     "assignee": "user-005",
     "dueDate": "2026-06-20",
     "description": "Replace polling with WebSocket-based real-time notifications",
-    "tags": ["Feature", "backend", "performance"],
+    "tags": [
+      "Feature",
+      "backend",
+      "performance"
+    ],
     "createdAt": "2026-05-03T09:00:00Z",
-    "updatedAt": "2026-05-03T09:00:00Z"
+    "updatedAt": "2026-05-03T09:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1011",
@@ -127,9 +175,14 @@
     "assignee": "user-003",
     "dueDate": "2026-06-05",
     "description": "Cover all payment processing scenarios with unit and integration tests",
-    "tags": ["testing", "security"],
+    "tags": [
+      "testing",
+      "security"
+    ],
     "createdAt": "2026-05-06T11:30:00Z",
-    "updatedAt": "2026-05-06T11:30:00Z"
+    "updatedAt": "2026-05-06T11:30:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1012",
@@ -139,9 +192,13 @@
     "assignee": "user-004",
     "dueDate": "2026-04-20",
     "description": "Add step-by-step installation and setup instructions to README",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-04-01T10:00:00Z",
-    "updatedAt": "2026-04-18T14:00:00Z"
+    "updatedAt": "2026-04-18T14:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1013",
@@ -151,9 +208,14 @@
     "assignee": "user-004",
     "dueDate": "2026-05-28",
     "description": "Create profile settings page with avatar, name, email, and preferences",
-    "tags": ["Feature", "ui"],
+    "tags": [
+      "Feature",
+      "ui"
+    ],
     "createdAt": "2026-05-02T09:00:00Z",
-    "updatedAt": "2026-05-14T10:00:00Z"
+    "updatedAt": "2026-05-14T10:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1014",
@@ -163,9 +225,14 @@
     "assignee": "user-005",
     "dueDate": "2026-05-25",
     "description": "Events display in wrong timezone when user is in different timezones",
-    "tags": ["Bug", "backend"],
+    "tags": [
+      "Bug",
+      "backend"
+    ],
     "createdAt": "2026-05-07T14:00:00Z",
-    "updatedAt": "2026-05-07T14:00:00Z"
+    "updatedAt": "2026-05-07T14:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1015",
@@ -175,9 +242,14 @@
     "assignee": "user-001",
     "dueDate": "2026-06-30",
     "description": "Migrate legacy auth code to comply with latest OWASP recommendations",
-    "tags": ["refactor", "security"],
+    "tags": [
+      "refactor",
+      "security"
+    ],
     "createdAt": "2026-05-10T08:00:00Z",
-    "updatedAt": "2026-05-10T08:00:00Z"
+    "updatedAt": "2026-05-10T08:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1016",
@@ -187,9 +259,13 @@
     "assignee": "user-003",
     "dueDate": "2026-04-30",
     "description": "Export analytics reports to CSV and PDF formats",
-    "tags": ["Feature"],
+    "tags": [
+      "Feature"
+    ],
     "createdAt": "2026-04-05T11:00:00Z",
-    "updatedAt": "2026-04-28T16:00:00Z"
+    "updatedAt": "2026-04-28T16:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1017",
@@ -199,9 +275,14 @@
     "assignee": "user-003",
     "dueDate": "2026-06-12",
     "description": "Document rate limiting rules, limits, and error responses",
-    "tags": ["documentation", "backend"],
+    "tags": [
+      "documentation",
+      "backend"
+    ],
     "createdAt": "2026-05-09T10:30:00Z",
-    "updatedAt": "2026-05-09T10:30:00Z"
+    "updatedAt": "2026-05-09T10:30:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1018",
@@ -211,9 +292,14 @@
     "assignee": "user-004",
     "dueDate": "2026-04-15",
     "description": "Fix sidebar menu items being overridden by global styles",
-    "tags": ["Bug", "ui"],
+    "tags": [
+      "Bug",
+      "ui"
+    ],
     "createdAt": "2026-04-10T09:00:00Z",
-    "updatedAt": "2026-04-14T11:00:00Z"
+    "updatedAt": "2026-04-14T11:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1019",
@@ -223,9 +309,14 @@
     "assignee": "user-005",
     "dueDate": "2026-05-30",
     "description": "Lazy load non-critical dashboard widgets to improve initial page load",
-    "tags": ["performance", "ui"],
+    "tags": [
+      "performance",
+      "ui"
+    ],
     "createdAt": "2026-05-04T09:00:00Z",
-    "updatedAt": "2026-05-13T14:00:00Z"
+    "updatedAt": "2026-05-13T14:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1020",
@@ -235,9 +326,14 @@
     "assignee": "user-004",
     "dueDate": "2026-07-10",
     "description": "Implement i18n support with Vietnamese and English translations",
-    "tags": ["Feature", "ui"],
+    "tags": [
+      "Feature",
+      "ui"
+    ],
     "createdAt": "2026-05-11T10:00:00Z",
-    "updatedAt": "2026-05-11T10:00:00Z"
+    "updatedAt": "2026-05-11T10:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1021",
@@ -247,9 +343,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-21",
     "description": "Validation error messages disappear or overlap with input fields",
-    "tags": ["Bug", "ui"],
+    "tags": [
+      "Bug",
+      "ui"
+    ],
     "createdAt": "2026-05-08T15:00:00Z",
-    "updatedAt": "2026-05-08T15:00:00Z"
+    "updatedAt": "2026-05-08T15:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1022",
@@ -259,9 +360,13 @@
     "assignee": "user-003",
     "dueDate": "2026-06-08",
     "description": "Create comprehensive migration guide for existing v1 users",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-05-05T10:00:00Z",
-    "updatedAt": "2026-05-05T10:00:00Z"
+    "updatedAt": "2026-05-05T10:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1023",
@@ -271,9 +376,13 @@
     "assignee": "user-005",
     "dueDate": "2026-06-25",
     "description": "Extract common data fetching logic into reusable custom hooks",
-    "tags": ["refactor"],
+    "tags": [
+      "refactor"
+    ],
     "createdAt": "2026-05-12T09:00:00Z",
-    "updatedAt": "2026-05-12T09:00:00Z"
+    "updatedAt": "2026-05-12T09:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1024",
@@ -283,9 +392,14 @@
     "assignee": "user-001",
     "dueDate": "2026-04-25",
     "description": "Add drag and drop file upload with progress indicator",
-    "tags": ["Feature", "ui"],
+    "tags": [
+      "Feature",
+      "ui"
+    ],
     "createdAt": "2026-04-01T10:00:00Z",
-    "updatedAt": "2026-04-24T15:00:00Z"
+    "updatedAt": "2026-04-24T15:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1025",
@@ -295,9 +409,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-17",
     "description": "Search queries return incomplete or irrelevant results",
-    "tags": ["Bug", "backend"],
+    "tags": [
+      "Bug",
+      "backend"
+    ],
     "createdAt": "2026-05-06T14:00:00Z",
-    "updatedAt": "2026-05-14T09:00:00Z"
+    "updatedAt": "2026-05-14T09:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1026",
@@ -307,9 +426,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-18",
     "description": "Standardize error responses and add proper error logging",
-    "tags": ["improvement", "backend"],
+    "tags": [
+      "improvement",
+      "backend"
+    ],
     "createdAt": "2026-05-10T11:00:00Z",
-    "updatedAt": "2026-05-10T11:00:00Z"
+    "updatedAt": "2026-05-10T11:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1027",
@@ -319,9 +443,13 @@
     "assignee": "user-003",
     "dueDate": "2026-04-10",
     "description": "Document all available keyboard shortcuts in the application",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-04-01T10:00:00Z",
-    "updatedAt": "2026-04-09T14:00:00Z"
+    "updatedAt": "2026-04-09T14:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1028",
@@ -331,9 +459,14 @@
     "assignee": "user-001",
     "dueDate": "2026-07-05",
     "description": "Add 2FA with TOTP authenticator apps and SMS backup",
-    "tags": ["Feature", "security"],
+    "tags": [
+      "Feature",
+      "security"
+    ],
     "createdAt": "2026-05-13T09:00:00Z",
-    "updatedAt": "2026-05-13T09:00:00Z"
+    "updatedAt": "2026-05-13T09:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1029",
@@ -343,9 +476,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-23",
     "description": "Sessions do not expire after the configured timeout period",
-    "tags": ["Bug", "security"],
+    "tags": [
+      "Bug",
+      "security"
+    ],
     "createdAt": "2026-05-09T13:00:00Z",
-    "updatedAt": "2026-05-09T13:00:00Z"
+    "updatedAt": "2026-05-09T13:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1030",
@@ -355,9 +493,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-28",
     "description": "Enable tree shaking for component library to reduce bundle size",
-    "tags": ["refactor", "performance"],
+    "tags": [
+      "refactor",
+      "performance"
+    ],
     "createdAt": "2026-05-11T10:00:00Z",
-    "updatedAt": "2026-05-11T10:00:00Z"
+    "updatedAt": "2026-05-11T10:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1031",
@@ -367,9 +510,14 @@
     "assignee": "user-004",
     "dueDate": "2026-06-03",
     "description": "Improve ARIA labels and keyboard navigation across the app",
-    "tags": ["improvement", "ui"],
+    "tags": [
+      "improvement",
+      "ui"
+    ],
     "createdAt": "2026-04-20T09:00:00Z",
-    "updatedAt": "2026-05-12T11:00:00Z"
+    "updatedAt": "2026-05-12T11:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1032",
@@ -379,9 +527,13 @@
     "assignee": "user-003",
     "dueDate": "2026-06-22",
     "description": "Compile FAQ and troubleshooting steps for frequently reported issues",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-05-12T14:00:00Z",
-    "updatedAt": "2026-05-12T14:00:00Z"
+    "updatedAt": "2026-05-12T14:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1033",
@@ -391,9 +543,13 @@
     "assignee": "user-001",
     "dueDate": "2026-04-28",
     "description": "Add bulk edit, delete, and status update for table rows",
-    "tags": ["Feature"],
+    "tags": [
+      "Feature"
+    ],
     "createdAt": "2026-04-05T10:00:00Z",
-    "updatedAt": "2026-04-27T16:00:00Z"
+    "updatedAt": "2026-04-27T16:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1034",
@@ -403,9 +559,13 @@
     "assignee": "user-002",
     "dueDate": "2026-05-24",
     "description": "Notification count badge stale after receiving new notifications",
-    "tags": ["Bug"],
+    "tags": [
+      "Bug"
+    ],
     "createdAt": "2026-05-07T10:00:00Z",
-    "updatedAt": "2026-05-13T15:00:00Z"
+    "updatedAt": "2026-05-13T15:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1035",
@@ -415,9 +575,13 @@
     "assignee": "user-005",
     "dueDate": "2026-06-14",
     "description": "Implement responsive image sizes and WebP format support",
-    "tags": ["performance"],
+    "tags": [
+      "performance"
+    ],
     "createdAt": "2026-05-10T09:00:00Z",
-    "updatedAt": "2026-05-10T09:00:00Z"
+    "updatedAt": "2026-05-10T09:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1036",
@@ -427,9 +591,15 @@
     "assignee": "user-001",
     "dueDate": "2026-07-20",
     "description": "Integrate SAML-based SSO for enterprise clients",
-    "tags": ["Feature", "security", "backend"],
+    "tags": [
+      "Feature",
+      "security",
+      "backend"
+    ],
     "createdAt": "2026-05-14T10:00:00Z",
-    "updatedAt": "2026-05-14T10:00:00Z"
+    "updatedAt": "2026-05-14T10:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1037",
@@ -439,9 +609,13 @@
     "assignee": "user-004",
     "dueDate": "2026-05-26",
     "description": "Write Storybook stories and JSDoc comments for all UI components",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-05-05T09:00:00Z",
-    "updatedAt": "2026-05-13T10:00:00Z"
+    "updatedAt": "2026-05-13T10:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1038",
@@ -451,9 +625,13 @@
     "assignee": "user-002",
     "dueDate": "2026-04-18",
     "description": "CSV and PDF exports contain garbled characters and missing data",
-    "tags": ["Bug"],
+    "tags": [
+      "Bug"
+    ],
     "createdAt": "2026-04-12T11:00:00Z",
-    "updatedAt": "2026-04-17T14:00:00Z"
+    "updatedAt": "2026-04-17T14:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1039",
@@ -463,9 +641,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-07",
     "description": "Migrate from Context API to Zustand for global state management",
-    "tags": ["refactor", "performance"],
+    "tags": [
+      "refactor",
+      "performance"
+    ],
     "createdAt": "2026-05-08T09:00:00Z",
-    "updatedAt": "2026-05-08T09:00:00Z"
+    "updatedAt": "2026-05-08T09:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1040",
@@ -475,9 +658,14 @@
     "assignee": "user-004",
     "dueDate": "2026-07-01",
     "description": "Allow users to drag and drop widgets to customize dashboard",
-    "tags": ["Feature", "ui"],
+    "tags": [
+      "Feature",
+      "ui"
+    ],
     "createdAt": "2026-05-11T11:00:00Z",
-    "updatedAt": "2026-05-11T11:00:00Z"
+    "updatedAt": "2026-05-11T11:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1041",
@@ -487,9 +675,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-16",
     "description": "Integrate performance monitoring tools and set up alerts for slow requests",
-    "tags": ["performance", "improvement"],
+    "tags": [
+      "performance",
+      "improvement"
+    ],
     "createdAt": "2026-05-12T09:00:00Z",
-    "updatedAt": "2026-05-12T09:00:00Z"
+    "updatedAt": "2026-05-12T09:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1042",
@@ -499,9 +692,14 @@
     "assignee": "user-002",
     "dueDate": "2026-04-05",
     "description": "Dropdown menus remain open after clicking outside",
-    "tags": ["Bug", "ui"],
+    "tags": [
+      "Bug",
+      "ui"
+    ],
     "createdAt": "2026-04-01T10:00:00Z",
-    "updatedAt": "2026-04-04T11:00:00Z"
+    "updatedAt": "2026-04-04T11:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1043",
@@ -511,9 +709,13 @@
     "assignee": "user-004",
     "dueDate": "2026-07-08",
     "description": "Produce and embed video tutorials for onboarding and key features",
-    "tags": ["documentation"],
+    "tags": [
+      "documentation"
+    ],
     "createdAt": "2026-05-13T10:00:00Z",
-    "updatedAt": "2026-05-13T10:00:00Z"
+    "updatedAt": "2026-05-13T10:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1044",
@@ -523,9 +725,14 @@
     "assignee": "user-003",
     "dueDate": "2026-05-29",
     "description": "Add multi-field filtering, date ranges, and saved filter presets",
-    "tags": ["Feature", "backend"],
+    "tags": [
+      "Feature",
+      "backend"
+    ],
     "createdAt": "2026-05-03T10:00:00Z",
-    "updatedAt": "2026-05-14T11:00:00Z"
+    "updatedAt": "2026-05-14T11:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1045",
@@ -535,9 +742,14 @@
     "assignee": "user-005",
     "dueDate": "2026-06-21",
     "description": "Implement retry logic, circuit breaker, and graceful degradation",
-    "tags": ["refactor", "backend"],
+    "tags": [
+      "refactor",
+      "backend"
+    ],
     "createdAt": "2026-05-12T10:00:00Z",
-    "updatedAt": "2026-05-12T10:00:00Z"
+    "updatedAt": "2026-05-12T10:00:00Z",
+    "createdBy": "user-005",
+    "reporter": "user-005"
   },
   {
     "id": "TASK-1046",
@@ -547,9 +759,14 @@
     "assignee": "user-002",
     "dueDate": "2026-05-19",
     "description": "Charts fail to render or display incorrect data on Safari",
-    "tags": ["Bug", "ui"],
+    "tags": [
+      "Bug",
+      "ui"
+    ],
     "createdAt": "2026-05-06T13:00:00Z",
-    "updatedAt": "2026-05-06T13:00:00Z"
+    "updatedAt": "2026-05-06T13:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-001"
   },
   {
     "id": "TASK-1047",
@@ -559,9 +776,14 @@
     "assignee": "user-001",
     "dueDate": "2026-07-12",
     "description": "Schedule automatic daily backups of Firestore and user uploads",
-    "tags": ["Feature", "security"],
+    "tags": [
+      "Feature",
+      "security"
+    ],
     "createdAt": "2026-05-14T09:00:00Z",
-    "updatedAt": "2026-05-14T09:00:00Z"
+    "updatedAt": "2026-05-14T09:00:00Z",
+    "createdBy": "user-001",
+    "reporter": "user-002"
   },
   {
     "id": "TASK-1048",
@@ -571,9 +793,14 @@
     "assignee": "user-004",
     "dueDate": "2026-04-22",
     "description": "Add skeleton loaders and progress indicators for async operations",
-    "tags": ["improvement", "ui"],
+    "tags": [
+      "improvement",
+      "ui"
+    ],
     "createdAt": "2026-04-08T10:00:00Z",
-    "updatedAt": "2026-04-21T15:00:00Z"
+    "updatedAt": "2026-04-21T15:00:00Z",
+    "createdBy": "user-004",
+    "reporter": "user-003"
   },
   {
     "id": "TASK-1049",
@@ -583,9 +810,14 @@
     "assignee": "user-003",
     "dueDate": "2026-06-02",
     "description": "End-to-end integration tests for complete checkout process",
-    "tags": ["testing", "security"],
+    "tags": [
+      "testing",
+      "security"
+    ],
     "createdAt": "2026-05-07T09:00:00Z",
-    "updatedAt": "2026-05-14T10:00:00Z"
+    "updatedAt": "2026-05-14T10:00:00Z",
+    "createdBy": "user-003",
+    "reporter": "user-004"
   },
   {
     "id": "TASK-1050",
@@ -595,8 +827,13 @@
     "assignee": "user-002",
     "dueDate": "2026-05-27",
     "description": "Configure SPF, DKIM, and DMARC records to improve email deliverability",
-    "tags": ["Bug", "backend"],
+    "tags": [
+      "Bug",
+      "backend"
+    ],
     "createdAt": "2026-05-09T10:00:00Z",
-    "updatedAt": "2026-05-09T10:00:00Z"
+    "updatedAt": "2026-05-09T10:00:00Z",
+    "createdBy": "user-002",
+    "reporter": "user-005"
   }
 ]
