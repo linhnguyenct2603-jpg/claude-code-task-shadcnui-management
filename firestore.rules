@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /tasks/{taskId} {
+      // Read: user đã login VÀ là createdBy hoặc reporter của task
+      allow read: if request.auth != null
+        && (resource.data.createdBy == request.auth.uid
+            || resource.data.reporter == request.auth.uid);
+
+      // Create: user đã login VÀ phải gán createdBy = uid của chính mình
+      allow create: if request.auth != null
+        && request.resource.data.createdBy == request.auth.uid;
+
+      // Update: user đã login VÀ là createdBy hoặc reporter
+      allow update: if request.auth != null
+        && (resource.data.createdBy == request.auth.uid
+            || resource.data.reporter == request.auth.uid);
+
+      // Delete: user đã login VÀ là createdBy hoặc reporter
+      allow delete: if request.auth != null
+        && (resource.data.createdBy == request.auth.uid
+            || resource.data.reporter == request.auth.uid);
+    }
+  }
+}
