@@ -38,7 +38,6 @@
       "dashboard",
       "dashboard_2",
       "dashboard_3",
-      "chart",
       "iso_documents"
     ],
     "createdAt": "2024-01-01T00:00:00Z",
@@ -51,7 +50,6 @@
     "description": "Access to Dashboard 3 (marketing metrics) and ISO documents.",
     "permissions": [
       "dashboard_3",
-      "chart",
       "iso_documents"
     ],
     "createdAt": "2024-01-01T00:00:00Z",

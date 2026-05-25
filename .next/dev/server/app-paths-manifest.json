@@ -1,10 +1,5 @@
 {
-  "/(dashboard)/calendar/page": "app/(dashboard)/calendar/page.js",
-  "/(dashboard)/chart/page": "app/(dashboard)/chart/page.js",
-  "/(dashboard)/chat/page": "app/(dashboard)/chat/page.js",
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
   "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/(dashboard)/iso-documents/page": "app/(dashboard)/iso-documents/page.js",
-  "/(dashboard)/quiz-monitor/page": "app/(dashboard)/quiz-monitor/page.js",
-  "/(dashboard)/tasks/page": "app/(dashboard)/tasks/page.js",
   "/page": "app/page.js"
 }

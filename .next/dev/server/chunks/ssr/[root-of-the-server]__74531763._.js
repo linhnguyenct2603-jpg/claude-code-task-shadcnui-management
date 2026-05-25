@@ -719,6 +719,8 @@ __turbopack_context__.s([
     ()=>deleteFirestoreDocument,
     "getFirestoreCollection",
     ()=>getFirestoreCollection,
+    "getFirestoreDocument",
+    ()=>getFirestoreDocument,
     "getFirestoreDocumentCollection",
     ()=>getFirestoreDocumentCollection,
     "updateFirestoreDocument",
@@ -901,6 +903,21 @@ async function getFirestoreDocumentCollection(collectionName, fallbackData) {
             console.warn(`Firestore REST read also failed. Falling back to local mock data.`, restError);
             return fallbackData;
         }
+    }
+}
+async function getFirestoreDocument(collectionName, documentId) {
+    try {
+        const db = await getDb();
+        const docSnap = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["doc"])(db, collectionName, documentId));
+        if (!docSnap.exists()) return null;
+        const data = docSnap.data();
+        return {
+            ...data,
+            id: docSnap.id
+        };
+    } catch (error) {
+        console.warn(`Failed to read document ${collectionName}/${documentId}:`, error);
+        return null;
     }
 }
 async function addFirestoreDocument(collectionName, data, documentId) {

@@ -1,9 +1,221 @@
 {
   "node": {
-    "4097db3985cdce71c297d054c56e991000858c0516": {
+    "407e164e607910425f53b77120104182734d6e5833": {
+      "workers": {
+        "app/(auth)/sign-in/page": {
+          "moduleId": 420619,
+          "async": true,
+          "exportedName": "setSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(auth)/sign-up/page": {
+          "moduleId": 638826,
+          "async": true,
+          "exportedName": "setSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(auth)/sign-in/page": "action-browser",
+        "app/(auth)/sign-up/page": "action-browser"
+      },
+      "filename": "src/lib/firebase/actions.ts",
+      "exportedName": "setSessionCookie"
+    },
+    "00861d013eddacc9a27b74667c7da7fd283ab6e9ce": {
+      "workers": {
+        "app/(dashboard)/calendar/page": {
+          "moduleId": 58893,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/chart/page": {
+          "moduleId": 430962,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/chat/page": {
+          "moduleId": 350660,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/customer-care/page": {
+          "moduleId": 504743,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/customers/page": {
+          "moduleId": 628216,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/dashboard-2/page": {
+          "moduleId": 53109,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/dashboard-3/page": {
+          "moduleId": 216403,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/dashboard/page": {
+          "moduleId": 235075,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/faqs/page": {
+          "moduleId": 275789,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/iso-documents/page": {
+          "moduleId": 316795,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/mail/page": {
+          "moduleId": 581666,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/mock-data/page": {
+          "moduleId": 87385,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/pricing/page": {
+          "moduleId": 625667,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/projects/page": {
+          "moduleId": 559697,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/quiz-monitor/page": {
+          "moduleId": 988699,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/quiz/page": {
+          "moduleId": 806288,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/account/page": {
+          "moduleId": 371801,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/appearance/page": {
+          "moduleId": 781881,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/billing/page": {
+          "moduleId": 462688,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/connections/page": {
+          "moduleId": 565447,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/notifications/page": {
+          "moduleId": 363922,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/roles/page": {
+          "moduleId": 356084,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/settings/user/page": {
+          "moduleId": 630588,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/tasks/page": {
+          "moduleId": 315832,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/(dashboard)/users/page": {
+          "moduleId": 463085,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        },
+        "app/seed-rbac/page": {
+          "moduleId": 210664,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/calendar/page": "action-browser",
+        "app/(dashboard)/chart/page": "action-browser",
+        "app/(dashboard)/chat/page": "action-browser",
+        "app/(dashboard)/customer-care/page": "action-browser",
+        "app/(dashboard)/customers/page": "action-browser",
+        "app/(dashboard)/dashboard-2/page": "action-browser",
+        "app/(dashboard)/dashboard-3/page": "action-browser",
+        "app/(dashboard)/dashboard/page": "action-browser",
+        "app/(dashboard)/faqs/page": "action-browser",
+        "app/(dashboard)/iso-documents/page": "action-browser",
+        "app/(dashboard)/mail/page": "action-browser",
+        "app/(dashboard)/mock-data/page": "action-browser",
+        "app/(dashboard)/pricing/page": "action-browser",
+        "app/(dashboard)/projects/page": "action-browser",
+        "app/(dashboard)/quiz-monitor/page": "action-browser",
+        "app/(dashboard)/quiz/page": "action-browser",
+        "app/(dashboard)/settings/account/page": "action-browser",
+        "app/(dashboard)/settings/appearance/page": "action-browser",
+        "app/(dashboard)/settings/billing/page": "action-browser",
+        "app/(dashboard)/settings/connections/page": "action-browser",
+        "app/(dashboard)/settings/notifications/page": "action-browser",
+        "app/(dashboard)/settings/roles/page": "action-browser",
+        "app/(dashboard)/settings/user/page": "action-browser",
+        "app/(dashboard)/tasks/page": "action-browser",
+        "app/(dashboard)/users/page": "action-browser",
+        "app/seed-rbac/page": "action-browser"
+      },
+      "filename": "src/lib/firebase/actions.ts",
+      "exportedName": "clearSessionCookie"
+    },
+    "40a03d604f4a608641db8b34ef05ac0c8809dd5c66": {
       "workers": {
         "app/(dashboard)/mock-data/page": {
-          "moduleId": 24411,
+          "moduleId": 87385,
           "async": true,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "src/app/(dashboard)/mock-data/page.tsx"
@@ -14,8 +226,23 @@
       },
       "filename": "src/app/(dashboard)/mock-data/page.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_0"
+    },
+    "00119bb1c76805a6a0ece5c8ecfe73bd44f38ceec4": {
+      "workers": {
+        "app/seed-rbac/page": {
+          "moduleId": 210664,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/seed-rbac/page.tsx"
+        }
+      },
+      "layer": {
+        "app/seed-rbac/page": "rsc"
+      },
+      "filename": "src/app/seed-rbac/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
     }
   },
   "edge": {},
-  "encryptionKey": "gJzMsBb2vWvNrRSYiI2Cq6WyxjjxLs4cPnIzB1BE/Xw="
+  "encryptionKey": "lapFdZHhpCki1jrvQ8IfVJPLoQG8NIbs9cU5KEk31H0="
 }

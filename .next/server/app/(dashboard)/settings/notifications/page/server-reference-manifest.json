@@ -1,4 +1,20 @@
 {
-  "node": {},
+  "node": {
+    "00861d013eddacc9a27b74667c7da7fd283ab6e9ce": {
+      "workers": {
+        "app/(dashboard)/settings/notifications/page": {
+          "moduleId": 363922,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/settings/notifications/page": "action-browser"
+      },
+      "exportedName": "clearSessionCookie",
+      "filename": "src/lib/firebase/actions.ts"
+    }
+  },
   "edge": {}
 }

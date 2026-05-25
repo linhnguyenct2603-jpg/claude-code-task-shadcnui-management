@@ -1,9 +1,24 @@
 {
   "node": {
-    "4097db3985cdce71c297d054c56e991000858c0516": {
+    "00861d013eddacc9a27b74667c7da7fd283ab6e9ce": {
       "workers": {
         "app/(dashboard)/mock-data/page": {
-          "moduleId": 24411,
+          "moduleId": 87385,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/mock-data/page": "action-browser"
+      },
+      "exportedName": "clearSessionCookie",
+      "filename": "src/lib/firebase/actions.ts"
+    },
+    "40a03d604f4a608641db8b34ef05ac0c8809dd5c66": {
+      "workers": {
+        "app/(dashboard)/mock-data/page": {
+          "moduleId": 87385,
           "async": true,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "src/app/(dashboard)/mock-data/page.tsx"

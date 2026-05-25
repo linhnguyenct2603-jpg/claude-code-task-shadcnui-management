@@ -78,6 +78,12 @@
       "namedRegex": "^/calendar(?:/)?$"
     },
     {
+      "page": "/chart",
+      "regex": "^/chart(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/chart(?:/)?$"
+    },
+    {
       "page": "/chat",
       "regex": "^/chat(?:/)?$",
       "routeKeys": {},
@@ -162,6 +168,12 @@
       "namedRegex": "^/forgot\\-password(?:/)?$"
     },
     {
+      "page": "/iso-documents",
+      "regex": "^/iso\\-documents(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/iso\\-documents(?:/)?$"
+    },
+    {
       "page": "/landing",
       "regex": "^/landing(?:/)?$",
       "routeKeys": {},
@@ -192,6 +204,24 @@
       "namedRegex": "^/projects(?:/)?$"
     },
     {
+      "page": "/quiz",
+      "regex": "^/quiz(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/quiz(?:/)?$"
+    },
+    {
+      "page": "/quiz-monitor",
+      "regex": "^/quiz\\-monitor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/quiz\\-monitor(?:/)?$"
+    },
+    {
+      "page": "/seed-rbac",
+      "regex": "^/seed\\-rbac(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/seed\\-rbac(?:/)?$"
+    },
+    {
       "page": "/settings/account",
       "regex": "^/settings/account(?:/)?$",
       "routeKeys": {},
@@ -220,6 +250,12 @@
       "regex": "^/settings/notifications(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/settings/notifications(?:/)?$"
+    },
+    {
+      "page": "/settings/roles",
+      "regex": "^/settings/roles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/settings/roles(?:/)?$"
     },
     {
       "page": "/settings/user",

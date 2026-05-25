@@ -164,6 +164,7 @@ export const sidebarMenuConfig: NavGroup[] = [
           { title: "Appearance", url: "/settings/appearance", icon: Settings, permission: "settings" },
           { title: "Notifications", url: "/settings/notifications", icon: Settings, permission: "settings" },
           { title: "Connections", url: "/settings/connections", icon: Settings, permission: "settings" },
+          { title: "Phân quyền User", url: "/settings/roles", icon: Shield, permission: "users" },
         ],
       },
       {

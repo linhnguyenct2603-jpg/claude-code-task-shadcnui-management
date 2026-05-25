@@ -4,7 +4,7 @@ import { User } from "firebase/auth"
 import { onAuthStateChanged } from "firebase/auth"
 import * as React from "react"
 import { auth } from "@/lib/firebase/client"
-import { getUserRole } from "@/modules/auth/services/role-services"
+import { getUserRole, ensureUserRole } from "@/modules/auth/services/role-services"
 import type { Role } from "@/modules/auth/services/types/role-types"
 
 export interface AuthContextValue {
@@ -43,7 +43,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setIsRoleLoading(true)
       try {
-        const userRole = await getUserRole(currentUser.uid)
+        let userRole = await getUserRole(currentUser.uid)
+        // Auto-seed role if not assigned yet (defaults to administrator)
+        if (!userRole) {
+          await ensureUserRole(currentUser.uid, "administrator")
+          userRole = await getUserRole(currentUser.uid)
+        }
         setRole(userRole)
       } catch {
         setRole(null)

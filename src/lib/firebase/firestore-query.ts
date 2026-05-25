@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, setDoc, updateDoc } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore"
 
 const FIRESTORE_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_API_KEY
 const FIRESTORE_PROJECT_ID = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
@@ -203,6 +203,22 @@ export async function getFirestoreDocumentCollection<T>(
       console.warn(`Firestore REST read also failed. Falling back to local mock data.`, restError)
       return fallbackData
     }
+  }
+}
+
+export async function getFirestoreDocument<T>(
+  collectionName: string,
+  documentId: string
+): Promise<T | null> {
+  try {
+    const db = await getDb()
+    const docSnap = await getDoc(doc(db, collectionName, documentId))
+    if (!docSnap.exists()) return null
+    const data = docSnap.data() as T
+    return { ...data, id: docSnap.id } as T
+  } catch (error) {
+    console.warn(`Failed to read document ${collectionName}/${documentId}:`, error)
+    return null
   }
 }
 

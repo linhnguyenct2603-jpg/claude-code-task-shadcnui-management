@@ -1,4 +1,20 @@
 {
-  "node": {},
+  "node": {
+    "00861d013eddacc9a27b74667c7da7fd283ab6e9ce": {
+      "workers": {
+        "app/(dashboard)/faqs/page": {
+          "moduleId": 275789,
+          "async": true,
+          "exportedName": "clearSessionCookie",
+          "filename": "src/lib/firebase/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(dashboard)/faqs/page": "action-browser"
+      },
+      "exportedName": "clearSessionCookie",
+      "filename": "src/lib/firebase/actions.ts"
+    }
+  },
   "edge": {}
 }
